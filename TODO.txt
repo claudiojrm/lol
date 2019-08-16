@@ -3,9 +3,9 @@ ok:
 - cadastro de campeonatos
 - cadastro de campeões do lol
 - cadastro de builds
+- flyers dos times (confronto) -> botão disponível para download
 
 pendentes:
-- flyers dos times (confronto) -> botão disponível para download
 - cadastro de times
 - cadastro de jogadores 
 - cadastro de comissão técnica?
