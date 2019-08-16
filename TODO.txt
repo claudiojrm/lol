@@ -1,3 +1,7 @@
+- cadastro de regiões
+- cadastro de campeonatos
+    
+
 - pós-jogo com entrevistas dos jogadores
 - pós-jogo com resumo da partida
 - escalação
@@ -16,7 +20,5 @@
 - comentários/tweets de personalidades
 - cadastro de times
 - cadastro de jogadores 
-- cadastro de regiões
-- cadastro de campeonatos
 - pick/bans
 - cadastro de campeões do lol
