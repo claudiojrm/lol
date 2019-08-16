@@ -1,0 +1,22 @@
+- pós-jogo com entrevistas dos jogadores
+- pós-jogo com resumo da partida
+- escalação
+- flyers dos times (confronto) -> botão disponível para download
+- tabela de classificação (criar uma área de classificação?) 
+- embedar tweets
+- lance a lance
+- jogadas com áudio (double kill, triple kill, quadra kill, peeeenta kill)
+- links da transmissão oficial
+- stats de gold
+- stats de gold parcial por jogador
+- stats de drag
+- pós jogo com stats de dano
+- série md1, md3, md5
+- deixar colaboradores cadastrarem jogos?
+- comentários/tweets de personalidades
+- cadastro de times
+- cadastro de jogadores 
+- cadastro de regiões
+- cadastro de campeonatos
+- pick/bans
+- cadastro de campeões do lol
