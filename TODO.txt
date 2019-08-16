@@ -2,12 +2,14 @@ ok:
 - cadastro de regiões
 - cadastro de campeonatos
 - cadastro de campeões do lol
+- cadastro de builds
 
 pendentes:
 - flyers dos times (confronto) -> botão disponível para download
 - cadastro de times
 - cadastro de jogadores 
-- cadastro de builds
+- cadastro de comissão técnica?
+- cartola?
 
 jogo:
 - pós-jogo com entrevistas dos jogadores
@@ -29,6 +31,7 @@ jogo:
 
 duvidas:
 - série md1, md3, md5
-- deixar colaboradores cadastrarem jogos?
+- cadastro de comissão técnica?
 - tabela de classificação (criar uma área de classificação?) 
 - cartola?
+- deixar colaboradores cadastrarem jogos?

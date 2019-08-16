@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'build.apps.BuildConfig',
+    'aovivo.apps.AovivoConfig',
     'campeao.apps.CampeaoConfig',
     'campeonato.apps.CampeonatoConfig',
+    'jogador.apps.JogadorConfig',
     'regiao.apps.RegiaoConfig',
 ]
 
