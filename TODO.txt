@@ -1,12 +1,13 @@
 ok:
 - cadastro de regiões
 - cadastro de campeonatos
+- cadastro de campeões do lol
 
 pendentes:
 - flyers dos times (confronto) -> botão disponível para download
 - cadastro de times
 - cadastro de jogadores 
-- cadastro de campeões do lol
+- cadastro de builds
 
 jogo:
 - pós-jogo com entrevistas dos jogadores
@@ -14,6 +15,8 @@ jogo:
 - pós jogo com stats de dano
 - escalação
 - pick/bans
+- runas
+- build
 - comentários/embedar tweets (personalidades?)
 - embedar tweets
 - lance a lance

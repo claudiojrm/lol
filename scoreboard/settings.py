@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'build.apps.BuildConfig',
     'campeao.apps.CampeaoConfig',
     'campeonato.apps.CampeonatoConfig',
     'regiao.apps.RegiaoConfig',
