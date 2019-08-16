@@ -1,12 +1,20 @@
+ok:
 - cadastro de regiões
 - cadastro de campeonatos
-    
 
+pendentes:
+- flyers dos times (confronto) -> botão disponível para download
+- cadastro de times
+- cadastro de jogadores 
+- cadastro de campeões do lol
+
+jogo:
 - pós-jogo com entrevistas dos jogadores
 - pós-jogo com resumo da partida
+- pós jogo com stats de dano
 - escalação
-- flyers dos times (confronto) -> botão disponível para download
-- tabela de classificação (criar uma área de classificação?) 
+- pick/bans
+- comentários/embedar tweets (personalidades?)
 - embedar tweets
 - lance a lance
 - jogadas com áudio (double kill, triple kill, quadra kill, peeeenta kill)
@@ -14,11 +22,10 @@
 - stats de gold
 - stats de gold parcial por jogador
 - stats de drag
-- pós jogo com stats de dano
+- video da transmissão?
+
+duvidas:
 - série md1, md3, md5
 - deixar colaboradores cadastrarem jogos?
-- comentários/tweets de personalidades
-- cadastro de times
-- cadastro de jogadores 
-- pick/bans
-- cadastro de campeões do lol
+- tabela de classificação (criar uma área de classificação?) 
+- cartola?

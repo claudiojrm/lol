@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'campeao.apps.CampeaoConfig',
     'campeonato.apps.CampeonatoConfig',
-    'regiao.apps.RegiaoConfig'
+    'regiao.apps.RegiaoConfig',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CSRF_COOKIE_SECURE = False
+
+## url de uploads
+MEDIA_URL = '/upload/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
