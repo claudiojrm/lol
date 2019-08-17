@@ -21,12 +21,45 @@
     margin-bottom: 10px;
 }
 
-.partida-card .blueside {
+.partida-card .times.blue {
     text-align: right;
 }
 
-.partida-card .redside {
+.partida-card .times.red {
     text-align: left;
+}
+
+.partida-card .times .side {
+    font-size: 11px;
+}
+
+.partida-card .times .side {
+    font-size: 11px;
+}
+
+.partida-card .times .side:before {
+    content: '';
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    height: 7px;
+    width: 7px;
+}
+
+.partida-card .times.blue .side {
+    color: #2c6dbd;
+}
+
+.partida-card .times.blue .side:before {
+    background: #2c6dbd;
+}
+
+.partida-card .times.red .side {
+    color: #ab1b1b;
+}
+
+.partida-card .times.red .side:before {
+    background: #ab1b1b;
 }
 
 .partida-card h5,

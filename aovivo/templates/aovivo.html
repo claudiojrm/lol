@@ -9,18 +9,20 @@
     <div class="partida-card row">
         <h5 class="col-xs-8 col-sm-24">{{partida.campeonato}} - Patch: <b>{{partida.patch}}</b></h5>
         
-        <div class="col-xs-3 col-sm-10 blueside">
+        <div class="col-xs-3 col-sm-10 times blue">
             <abbr title="{{partida.blueside.nome}}">{{partida.blueside.abreviatura}}</abbr> 
             <img src="{{MEDIA_URL}}{{partida.blueside.imagem}}" width="30">
+            <div class="side">blue side</div>
         </div>
         <div class="col-xs-2 col-sm-4 placar">
             <span class="kill">{{partida.blueside.kill}}</span> 
             <span class="vs">x</span>
             <span class="kill">{{partida.redside.kill}}</span>
         </div>
-        <div class="col-xs-3 col-sm-10 redside">
+        <div class="col-xs-3 col-sm-10 times red">
             <img src="{{MEDIA_URL}}{{partida.redside.imagem}}" width="30"> 
             <abbr title="{{partida.redside.nome}}">{{partida.redside.abreviatura}}</abbr>
+            <div class="side">red side</div>
         </div>
         <span class="status col-xs-8">{{partida.status}}</span>
     </div>
