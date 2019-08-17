@@ -35,8 +35,9 @@
                     <div class="shortcuts">
                         {% if lance.tempo %}
                         <time>{{lance.tempo}}'</time>
-                        {% endif %}
+                        {% else %}
                         <div class="status">{{lance.status}}</div>
+                        {% endif %}
                     </div>
                     {% endif %}
                     <div class="lance">

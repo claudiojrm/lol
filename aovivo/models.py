@@ -18,6 +18,7 @@ class Partida(models.Model):
 
 class Lance(models.Model):
     status = models.IntegerField(choices=((1, 'Pré jogo'), (2, 'Pick e Bans'), (3, 'Em andamento'), (4, 'Jogo Pausado'), (5, 'Pós Jogo'), (6, 'Encerrado')), default=1)
+    order = models.IntegerField()
     side = models.CharField(max_length=10, choices=(('blue','Blue'), ('red', 'Red')), blank=True)
     tempo = models.IntegerField(blank=True, default=0)
     titulo = models.CharField(max_length=200)
@@ -27,3 +28,6 @@ class Lance(models.Model):
 
     def __str__(self):
         return self.titulo
+
+    class Meta:
+        ordering = ['order']

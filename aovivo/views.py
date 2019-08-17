@@ -6,7 +6,7 @@ from django.conf import settings
 def aovivo(request):
     status = ('Pré Jogo', 'Pick e Bans', 'Em andamento', 'Jogo Pausado', 'Pós Jogo', 'Encerrado')
     partida = Partida.objects.all()[0]
-    partida.lances = Lance.objects.filter(partida=partida.id)
+    partida.lances = Lance.objects.filter(partida=partida.id).reverse()
     
     partida.redside = Times.objects.get(redside=partida.id)
     partida.redside.kill = partida.kill_redside
@@ -22,8 +22,6 @@ def aovivo(request):
             lance.fim = True
 
         lance.status = status[lance.status - 1]
-
-
     
     partida.status = status[partida.status - 1]
 

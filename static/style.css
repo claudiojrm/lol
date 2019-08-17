@@ -104,7 +104,6 @@
 .partida-lances .shortcuts {
     border-right: 1px solid #eaeaea;
     flex: 1;
-    min-width: 120px;
     max-width: 150px;
     padding: 20px 10px;
     position: relative;
