@@ -18,7 +18,11 @@ def aovivo(request):
         if partida.status < lance.status:
             partida.status = lance.status
 
+        if lance.status > 4:
+            lance.fim = True
+
         lance.status = status[lance.status - 1]
+
 
     
     partida.status = status[partida.status - 1]

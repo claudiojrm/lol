@@ -24,19 +24,21 @@
             <abbr title="{{partida.redside.nome}}">{{partida.redside.abreviatura}}</abbr>
             <div class="side">red side</div>
         </div>
-        <span class="status col-xs-8">{{partida.status}}</span>
+        <div class="col-xs-8"><span class="status">{{partida.status}}</span></div>
     </div>
 
     {% if partida.lances %}
         <ul class="partida-lances container">
             {% for lance in partida.lances %}
-                <li class="{% if lance.side %}side{% endif %} {{lance.side}}">
+                <li class="{% if lance.fim %}fim{% endif %} {% if lance.side %}side{% endif %} {{lance.side}}">
+                    {% if not lance.fim %}
                     <div class="shortcuts">
                         {% if lance.tempo %}
                         <time>{{lance.tempo}}'</time>
                         {% endif %}
                         <div class="status">{{lance.status}}</div>
                     </div>
+                    {% endif %}
                     <div class="lance">
                         <h3>{{lance.titulo}}</h3>
                         <p>
