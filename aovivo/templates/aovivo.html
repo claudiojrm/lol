@@ -1,98 +1,6 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<style>
-    .partida header {
-        background: #121212;
-        border-bottom: 2px solid #262626;
-        margin-bottom: 15px;
-        padding: 15px;
-        text-align: center;
-    }
-
-    .partida header p {
-        color: #fff;
-    }
-
-    .partida header h1 {
-        font-weight: 300;
-        color: #c79a3c;
-        margin-bottom: 5px;
-    }
-    
-    .partida-card {
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .partida-card .blueside {
-        text-align: right;
-    }
-
-    .partida-card .redside {
-        text-align: left;
-    }
-
-    .partida-card h5,
-    .partida-card .status {
-        font-size: 13px;
-    }
-
-    .partida-card abbr {
-        font-size: 16px;
-        font-weight: bold;
-        text-decoration: none;
-        vertical-align: middle;
-    }
-
-    .partida-card .placar {
-        margin-top: 3px;
-    }
-
-    .partida-card .kill {
-        font-weight: bold;
-        font-size: 20px;
-        vertical-align: middle;
-    }
-
-    .partida-card .vs {
-        font-size: 11px;
-        visibility: middle;
-    }
-
-    .partida-lances {
-        border-top: 1px solid #eaeaea;
-    }
-
-    .partida-lances li {
-        display: flex;
-    }
-
-    .partida-lances .shortcuts {
-        border-right: 1px solid #eaeaea;
-        flex: 1;
-        max-width: 100px;
-        text-align: center;
-        padding: 20px 0;
-    }
-
-    .partida-lances .lance {
-        flex: 2;
-        padding: 20px;
-    }
-
-    .partida-lances .lance h3 {
-        text-transform: uppercase;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-    
-    .partida-lances .lance p {
-        font-size: 15px;
-    }
-    
-</style>
-
 <div class="partida container-fluid">
     <header class="row">
         <h1>{{partida.titulo}}</h1>
@@ -120,54 +28,23 @@
     {% if partida.lances %}
         <ul class="partida-lances container">
             {% for lance in partida.lances %}
-                <li class="{{lance.side}}">
+                <li class="{% if lance.side %}side{% endif %} {{lance.side}}">
                     <div class="shortcuts">
-                        <div>{{lance.status}}</div>
                         {% if lance.tempo %}
-                            <time>{{lance.tempo}}'</time>
+                        <time>{{lance.tempo}}'</time>
                         {% endif %}
+                        <div class="status">{{lance.status}}</div>
                     </div>
                     <div class="lance">
                         <h3>{{lance.titulo}}</h3>
-                        <p>{{lance.descricao}}</p>
-                    </div>
-                </li>
-                <li class="{{lance.side}}">
-                    <div class="shortcuts">
-                        <div>{{lance.status}}</div>
-                        {% if lance.tempo %}
-                            <time>{{lance.tempo}}'</time>
-                        {% endif %}
-                    </div>
-                    <div class="lance">
-                        <h3>{{lance.titulo}}</h3>
-                        <p>{{lance.descricao}}</p>
-                    </div>
-                </li>
-                <li class="{{lance.side}}">
-                        <div class="shortcuts">
-                            <div>{{lance.status}}</div>
-                            {% if lance.tempo %}
-                                <time>{{lance.tempo}}'</time>
+                        <p>
+                            {{lance.descricao}} 
+                            {% if lance.link %}
+                                <a href="{{lance.link}}" target="_blank">Leia mais</a>
                             {% endif %}
-                        </div>
-                        <div class="lance">
-                            <h3>{{lance.titulo}}</h3>
-                            <p>{{lance.descricao}}</p>
-                        </div>
-                    </li>
-                    <li class="{{lance.side}}">
-                            <div class="shortcuts">
-                                <div>{{lance.status}}</div>
-                                {% if lance.tempo %}
-                                    <time>{{lance.tempo}}'</time>
-                                {% endif %}
-                            </div>
-                            <div class="lance">
-                                <h3>{{lance.titulo}}</h3>
-                                <p>{{lance.descricao}}</p>
-                            </div>
-                        </li>
+                        </p>
+                    </div>
+                </li>
             {% endfor %}
         </ul>
     {% endif %}

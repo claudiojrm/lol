@@ -23,6 +23,7 @@ class Lance(models.Model):
     titulo = models.CharField(max_length=200)
     descricao = models.TextField()
     partida = models.ForeignKey(Partida, on_delete=models.CASCADE)
+    link = models.URLField(blank=True)
 
     def __str__(self):
         return self.titulo

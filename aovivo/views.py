@@ -6,7 +6,7 @@ from django.conf import settings
 def aovivo(request):
     status = ('Pré Jogo', 'Pick e Bans', 'Em andamento', 'Jogo Pausado', 'Pós Jogo', 'Encerrado')
     partida = Partida.objects.all()[0]
-    partida.lances = Lance.objects.filter(partida=partida.id).order_by('id')
+    partida.lances = Lance.objects.filter(partida=partida.id)
     
     partida.redside = Times.objects.get(redside=partida.id)
     partida.redside.kill = partida.kill_redside
