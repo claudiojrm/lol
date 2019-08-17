@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    .partida header {
+        background: #121212;
+        border-bottom: 2px solid #262626;
+        margin-bottom: 15px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .partida header p {
+        color: #fff;
+    }
+
+    .partida header h1 {
+        font-weight: 300;
+        color: #c79a3c;
+        margin-bottom: 5px;
+    }
+    
+    .partida-card {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .partida-card .blueside {
+        text-align: right;
+    }
+
+    .partida-card .redside {
+        text-align: left;
+    }
+
+    .partida-card h5,
+    .partida-card .status {
+        font-size: 13px;
+    }
+
+    .partida-card abbr {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        vertical-align: middle;
+    }
+
+    .partida-card .placar {
+        margin-top: 3px;
+    }
+
+    .partida-card .kill {
+        font-weight: bold;
+        font-size: 20px;
+        vertical-align: middle;
+    }
+
+    .partida-card .vs {
+        font-size: 11px;
+        visibility: middle;
+    }
+
+    .partida-lances {
+        border-top: 1px solid #eaeaea;
+    }
+
+    .partida-lances li {
+        display: flex;
+    }
+
+    .partida-lances .shortcuts {
+        border-right: 1px solid #eaeaea;
+        flex: 1;
+        max-width: 100px;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .partida-lances .lance {
+        flex: 2;
+        padding: 20px;
+    }
+
+    .partida-lances .lance h3 {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    
+    .partida-lances .lance p {
+        font-size: 15px;
+    }
+    
+</style>
+
+<div class="partida container-fluid">
+    <header class="row">
+        <h1>{{partida.titulo}}</h1>
+        <p>{{partida.descricao}}</p>
+    </header>
+    <div class="partida-card row">
+        <h5 class="col-xs-8 col-sm-24">{{partida.campeonato}} - Patch: <b>{{partida.patch}}</b></h5>
+        
+        <div class="col-xs-3 col-sm-10 blueside">
+            <abbr title="{{partida.blueside.nome}}">{{partida.blueside.abreviatura}}</abbr> 
+            <img src="{{MEDIA_URL}}{{partida.blueside.imagem}}" width="30">
+        </div>
+        <div class="col-xs-2 col-sm-4 placar">
+            <span class="kill">{{partida.blueside.kill}}</span> 
+            <span class="vs">x</span>
+            <span class="kill">{{partida.redside.kill}}</span>
+        </div>
+        <div class="col-xs-3 col-sm-10 redside">
+            <img src="{{MEDIA_URL}}{{partida.redside.imagem}}" width="30"> 
+            <abbr title="{{partida.redside.nome}}">{{partida.redside.abreviatura}}</abbr>
+        </div>
+        <span class="status col-xs-8">{{partida.status}}</span>
+    </div>
+
+    {% if partida.lances %}
+        <ul class="partida-lances container">
+            {% for lance in partida.lances %}
+                <li class="{{lance.side}}">
+                    <div class="shortcuts">
+                        <div>{{lance.status}}</div>
+                        {% if lance.tempo %}
+                            <time>{{lance.tempo}}'</time>
+                        {% endif %}
+                    </div>
+                    <div class="lance">
+                        <h3>{{lance.titulo}}</h3>
+                        <p>{{lance.descricao}}</p>
+                    </div>
+                </li>
+                <li class="{{lance.side}}">
+                    <div class="shortcuts">
+                        <div>{{lance.status}}</div>
+                        {% if lance.tempo %}
+                            <time>{{lance.tempo}}'</time>
+                        {% endif %}
+                    </div>
+                    <div class="lance">
+                        <h3>{{lance.titulo}}</h3>
+                        <p>{{lance.descricao}}</p>
+                    </div>
+                </li>
+                <li class="{{lance.side}}">
+                        <div class="shortcuts">
+                            <div>{{lance.status}}</div>
+                            {% if lance.tempo %}
+                                <time>{{lance.tempo}}'</time>
+                            {% endif %}
+                        </div>
+                        <div class="lance">
+                            <h3>{{lance.titulo}}</h3>
+                            <p>{{lance.descricao}}</p>
+                        </div>
+                    </li>
+                    <li class="{{lance.side}}">
+                            <div class="shortcuts">
+                                <div>{{lance.status}}</div>
+                                {% if lance.tempo %}
+                                    <time>{{lance.tempo}}'</time>
+                                {% endif %}
+                            </div>
+                            <div class="lance">
+                                <h3>{{lance.titulo}}</h3>
+                                <p>{{lance.descricao}}</p>
+                            </div>
+                        </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+
+{% endblock %}
