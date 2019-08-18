@@ -31,6 +31,7 @@ class Lance(models.Model):
     descricao = models.TextField(blank=True)
     partida = models.ForeignKey(Partida, on_delete=models.CASCADE)
     link = models.URLField(blank=True)
+    stats = models.CharField(max_length=20, choices=(('barão', 'Barão de Nashor'),('drag-anciao', 'Dragão ancião'),('drag-infernal', 'Dragão infernal'),('drag-montanha', 'Dragão da montanha'),('drag-oceano', 'Dragão do oceano'),('drag-vento', 'Dragão de vento')), blank=True)
     embed = models.CharField(max_length=20, choices=(('youtube', 'Youtube'), ('twitch', 'Twitch'), ('twitter', 'Twitter')), blank=True)
     conteudo_embed = models.TextField(blank=True)
 
