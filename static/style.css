@@ -176,12 +176,14 @@
     padding-right: 0;
 }
 
-.partida-lances .youtube {
+.partida-lances .youtube,
+.partida-lances .twitter {
     position: relative;
-    padding-bottom: 90%;
-    left: -120px;
-    margin-right: -140px;
     margin-top: 15px;
+}
+
+.partida-lances .youtube {
+    padding-bottom: 62.5%;
     height: 0;
 }
 
@@ -191,4 +193,8 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.partida-lances .twitter > * {
+    width: 100%!important;
 }

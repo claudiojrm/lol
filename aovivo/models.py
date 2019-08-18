@@ -31,7 +31,7 @@ class Lance(models.Model):
     descricao = models.TextField()
     partida = models.ForeignKey(Partida, on_delete=models.CASCADE)
     link = models.URLField(blank=True)
-    embed = models.CharField(max_length=20, choices=(('youtube', 'Youtube'),), blank=True)
+    embed = models.CharField(max_length=20, choices=(('youtube', 'Youtube'), ('twitter', 'Twitter')), blank=True)
     conteudo_embed = models.TextField(blank=True)
 
     def __str__(self):

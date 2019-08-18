@@ -12,7 +12,6 @@ def aovivo(request, regiao, campeonato, slug):
     except Partida.DoesNotExist:
         partida = None
 
-        
     if not partida:
         return redirect('/')
 

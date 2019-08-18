@@ -34,7 +34,6 @@
                 <p>{{partida.descricao}}</p>
             </header>
     
-            {% if partida.lances %}
             <div class="col-xs-8 col-sm-16">
                 <ul class="partida-lances">
                 {% for lance in partida.lances %}
@@ -63,16 +62,23 @@
                             {% endif %}
     
                             {% if lance.conteudo_embed %}
-                                {% if lance.embed == 'youtube' %}
+                                {% if lance.embed == 'youtube' or lance.embed == 'twitter' %}
                                     <div class="embed {{lance.embed}}">{{lance.conteudo_embed|safe}}</div>
                                 {% endif %}
                             {% endif %}                            
                         </div>
                     </li>
                 {% endfor %}
+                {% if not partida.lances %}
+                    <li class="fim">
+                        <div class="lance">
+                            <h3>O jogo ainda não começou</h3>
+                            <p>O jogo começará em instantes, fique ligado!</p>
+                        </div>
+                    </li>
+                {% endif %}
                 </ul>
             </div>
-            {% endif %}
 
         </div>
     </div>
