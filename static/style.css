@@ -26,13 +26,12 @@
 .partida h5 {
     background: #121212;
     color: #fff;
-    padding: 10px 0;
+    padding: 5px 0;
     text-align: center;
 }
 
 .partida-card .times {
     position: relative;
-    margin-bottom: 5px;
 }
 
 .partida-card .times.blue {
@@ -67,8 +66,8 @@
     color: #000;
     display: inline-block;
     font-size: 10px;
-    padding: 0 8px;
-    line-height: 2.2;
+    padding: 0 6px;
+    line-height: 2;
     text-transform: lowercase;
 }
 
@@ -100,7 +99,7 @@
 .partida .bullets.describe {
     margin-top: 10px;
     border-top: 1px solid #191919;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .partida .bullets.describe .red:after,
