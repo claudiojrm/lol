@@ -36,7 +36,7 @@ def aovivo(request, regiao, campeonato, slug):
         if ('Encerrado' in lance.status.nome) or ('Pós' in lance.status.nome):
             lance.fim = True
 
-        if lance.stats:
+        if lance.stats and lance.side:
             stats = lance.stats.split('|')
             partida.stats[lance.side].append({
                 'slug' : stats[0],

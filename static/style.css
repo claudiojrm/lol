@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
+body {
+    overflow-x: hidden;
+}
+
 .partida {
     background: #f5f5f5;
-    overflow-x: hidden;
 }
 .partida header {
     text-align: center;
