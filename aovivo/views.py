@@ -66,13 +66,6 @@ class PartidaSerializer(serializers.HyperlinkedModelSerializer):
             }
         }
 
-class LanceSerializer(serializers.HyperlinkedModelSerializer):
-    partida = PartidaSerializer()
-
-    class Meta:
-        model = Lance
-        fields = '__all__'
-
 class PartidaViewSet(viewsets.ModelViewSet):
     queryset = Partida.objects.all()
     serializer_class = PartidaSerializer
