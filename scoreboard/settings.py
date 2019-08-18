@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'adminsortable2', 
+    'rest_framework',
     'build.apps.BuildConfig',
     'aovivo.apps.AovivoConfig',
     'campeao.apps.CampeaoConfig',
@@ -138,3 +139,8 @@ CSRF_COOKIE_SECURE = False
 ## url de uploads
 MEDIA_URL = '/upload/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 1
+}

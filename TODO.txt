@@ -12,6 +12,7 @@ ok:
 - stats de gold
 - barão/drag
 - pick/bans
+- cadastro de imagens
 
 pendentes:
 - cadastro de times
@@ -19,7 +20,6 @@ pendentes:
 
 jogo:
 - escalação
-- cadastro de imagens
 - links da transmissão oficial
 - video da transmissão?
 - socket 
@@ -36,3 +36,5 @@ duvidas:
 - jogadas com áudio (double kill, triple kill, quadra kill, peeeenta kill)
 - deixar colaboradores cadastrarem jogos?
 - cartola?
+- pick/bans (interativo)
+- barão/ancião (timer)
