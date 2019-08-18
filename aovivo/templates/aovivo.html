@@ -11,15 +11,14 @@
                 <img src="{{MEDIA_URL}}{{partida.blueside.imagem}}" width="30">
                 <div class="bullets">
                     <span class="blue" title="Blue side"></span>
+                    
                     {% if partida.blueside.gold > 0 %}
-                    <span class="gold" data-text="{{partida.blueside.fgold}} g" title="Quantidade de ouro"></span>
+                        <span class="gold" data-text="{{partida.blueside.fgold}} g" title="Quantidade de ouro"></span>
                     {% endif %}
-                    <span class="barao" title="Barão de Nashor"></span>
-                    <span class="anciao" title="Dragão ancião"></span>
-                    <span class="vento" title="Dragão de vento"></span>
-                    <span class="oceano" title="Dragão de oceano"></span>
-                    <span class="montanha" title="Dragão da montanha"></span>
-                    <span class="infernal" title="Dragão infernal"></span>
+                    
+                    {% for stat in partida.redside.stats %}
+                        <span class="{{stat.slug}}" title="{{stat.nome}}"></span>
+                    {% endfor %}
                 </div>
             </div>
             <div class="score">
@@ -32,15 +31,14 @@
                 <abbr title="{{partida.redside.nome}}">{{partida.redside.abreviatura}}</abbr>
                 <div class="bullets">
                     <span class="red" title="Red side"></span>
+                    
                     {% if partida.redside.gold > 0 %}
-                    <span class="gold" data-text="{{partida.redside.fgold}} g" title="Quantidade de ouro"></span>
+                        <span class="gold" data-text="{{partida.redside.fgold}} g" title="Quantidade de ouro"></span>
                     {% endif %}
-                    <span class="barao" title="Barão de Nashor"></span>
-                    <span class="anciao" title="Dragão ancião"></span>
-                    <span class="vento" title="Dragão de vento"></span>
-                    <span class="oceano" title="Dragão de oceano"></span>
-                    <span class="montanha" title="Dragão da montanha"></span>
-                    <span class="infernal" title="Dragão infernal"></span>
+                    
+                    {% for stat in partida.redside.stats %}
+                        <span class="{{stat.slug}}" title="{{stat.nome}}"></span>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -86,7 +84,7 @@
 
                             {% if lance.descricao %}
                             <p>
-                                {{lance.descricao}} 
+                                {{lance.descricao|safe|linebreaks}} 
                                 {% if lance.link %}
                                     <a href="{{lance.link}}" target="_blank">Leia mais</a>
                                 {% endif %}

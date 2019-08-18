@@ -10,6 +10,7 @@ ok:
 - lance a lance
 - stats de drag
 - stats de gold
+- barão/drag
 
 pendentes:
 - cadastro de times
@@ -17,7 +18,6 @@ pendentes:
 
 jogo:
 - escalação
-- barão/drag
 - pick/bans
 - cadastro de imagens
 - links da transmissão oficial
