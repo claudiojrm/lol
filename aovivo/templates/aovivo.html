@@ -11,7 +11,9 @@
                 <img src="{{MEDIA_URL}}{{partida.blueside.imagem}}" width="30">
                 <div class="bullets">
                     <span class="blue" title="Blue side"></span>
-                    <span class="gold" data-text="{{partida.blueside.gold}}g" title="Quantidade de ouro"></span>
+                    {% if partida.blueside.gold > 0 %}
+                    <span class="gold" data-text="{{partida.blueside.fgold}} g" title="Quantidade de ouro"></span>
+                    {% endif %}
                     <span class="barao" title="Barão de Nashor"></span>
                     <span class="anciao" title="Dragão ancião"></span>
                     <span class="vento" title="Dragão de vento"></span>
@@ -30,7 +32,9 @@
                 <abbr title="{{partida.redside.nome}}">{{partida.redside.abreviatura}}</abbr>
                 <div class="bullets">
                     <span class="red" title="Red side"></span>
-                    <span class="gold" data-text="{{partida.redside.gold}}g" title="Quantidade de ouro"></span>
+                    {% if partida.redside.gold > 0 %}
+                    <span class="gold" data-text="{{partida.redside.fgold}} g" title="Quantidade de ouro"></span>
+                    {% endif %}
                     <span class="barao" title="Barão de Nashor"></span>
                     <span class="anciao" title="Dragão ancião"></span>
                     <span class="vento" title="Dragão de vento"></span>

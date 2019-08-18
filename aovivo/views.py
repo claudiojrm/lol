@@ -19,10 +19,12 @@ def aovivo(request, regiao, campeonato, slug):
     
     partida.redside = Times.objects.get(redside=partida.id)
     partida.redside.kill = partida.kill_redside
-    partida.redside.gold = '{0:,}'.format(partida.gold_redside)
+    partida.redside.gold = partida.gold_redside
+    partida.redside.fgold = '{0:,}'.format(partida.gold_redside)
     partida.blueside = Times.objects.get(blueside=partida.id)
     partida.blueside.kill = partida.kill_blueside
-    partida.blueside.gold = '{0:,}'.format(partida.gold_blueside)
+    partida.blueside.gold = partida.gold_blueside
+    partida.blueside.fgold = '{0:,}'.format(partida.gold_blueside)
     partida.status = status[partida.lances.first().status]
 
     for lance in partida.lances:
