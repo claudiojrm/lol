@@ -9,6 +9,15 @@ class LanceAdmin(SortableInlineAdminMixin, admin.StackedInline):
 class PartidaAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'slugs')
     inlines = (LanceAdmin, )
+    fields = (
+        'titulo',
+        'descricao',
+        'flyer',
+        'patch',
+        'campeonato',
+        ('redside', 'kill_redside', 'gold_redside'),
+        ('blueside', 'kill_blueside', 'gold_blueside')
+    )
 
     def slugs(self, obj):
         return '/'.join(('', obj.campeonato.regiao.slug,obj.campeonato.slug, obj.slug, ''))

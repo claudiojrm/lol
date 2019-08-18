@@ -14,6 +14,8 @@ class Partida(models.Model):
     blueside = models.ForeignKey(Times, on_delete=models.CASCADE, related_name='blueside')
     kill_redside = models.IntegerField()
     kill_blueside = models.IntegerField()
+    gold_redside = models.IntegerField()
+    gold_blueside = models.IntegerField()
 
     def __str__(self):
         return self.titulo

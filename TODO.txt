@@ -8,6 +8,7 @@ ok:
 - pós-jogo com resumo da partida
 - pós-jogo com entrevistas dos jogadores (yt, twitch)
 - lance a lance
+- stats de drag
 
 pendentes:
 - cadastro de times
@@ -25,8 +26,7 @@ jogo:
 duvidas:
 - stats de gold
 - stats de gold parcial por jogador
-- stats de drag
-- pós jogo com stats de dano
+- stats de dano
 - runas
 - build
 - série md1, md3, md5
