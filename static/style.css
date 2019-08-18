@@ -1,3 +1,8 @@
+@charset "UTF-8";
+
+.partida {
+    background: #f5f5f5;
+}
 .partida header {
     text-align: center;
     border-bottom: 1px solid #eaeaea;
@@ -12,15 +17,22 @@
 
 .partida-card {
     background: #121212;
-    padding: 10px 0;
     position: sticky;
-    text-align: center;
     z-index: 1;
     top: 0;
 }
+
 .partida-card,
-.partida-card h5 {
+.partida h5,
+.partida .bullets.describe {
     color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.partida h5,
+.partida .bullets.describe {
+    background: #191919;
 }
 
 .partida-card .times.blue {
@@ -45,23 +57,22 @@
     padding: 0 8px;
     line-height: 2.2;
     text-transform: lowercase;
-    margin-bottom: 10px;
 }
 
-.partida-card .bullets {
+.partida .bullets {
     font-size: 11px;
 }
 
-.partida-card .bullets {
+.partida .bullets {
     display: flex;
     justify-content: center;
 }
 
-.partida-card .bullets li {
+.partida .bullets li {
     margin-right: 10px;
 }
 
-.partida-card .bullets span:before {
+.partida .bullets span:before {
     border-radius: 50%;
     background: #fff;
     content: '';
@@ -72,63 +83,69 @@
     width: 7px;
 }
 
-.partida-card .bullets.describe .red:after,
-.partida-card .bullets.describe .gold:after,
-.partida-card .bullets.describe .barao:after,
-.partida-card .bullets.describe .infernal:after {
+.partida .bullets.describe .red:after,
+.partida .bullets.describe .gold:after,
+.partida .bullets.describe .barao:after,
+.partida .bullets.describe .infernal:after,
+.partida-card .times .gold:after {
     display: inline-block;
     margin-right: 10px;
 }
 
-.partida-card .bullets.describe .red:after {
+.partida .bullets.describe .red:after {
     content: 'side';
 }
 
-.partida-card .bullets.describe .barao:after {
+.partida .bullets.describe .barao:after {
     content: 'barão';
 }
 
-.partida-card .bullets.describe .gold:after {
+.partida-card .times .gold:after {
+    content: attr(data-gold);
+    margin-right: 5px;
+}
+
+.partida .bullets.describe .gold:after {
     content: 'ouro';
 }
 
-.partida-card .bullets.describe .infernal:after {
+.partida .bullets.describe .infernal:after {
     content: 'dragão';
 }
 
-.partida-card .bullets .blue:before {
+.partida .bullets .blue:before {
     background: #2c6dbd;
 }
 
-.partida-card .bullets .red:before {
+.partida .bullets .red:before {
     background: #ab1b1b;
 }
 
-.partida-card .bullets .gold:before {
+.partida .bullets .gold:before {
     background: #c79a3c;
 }
 
-.partida-card .bullets .barao:before {
+.partida .bullets .barao:before {
     background: #8e17b5;
 }
 
-.partida-card .bullets .vento:before {
+.partida .bullets .vento:before {
     background: #ccc;
 }
 
-.partida-card .bullets .oceano:before {
+.partida .bullets .oceano:before {
     background: #41b3a8;
 }
 
-.partida-card .bullets .montanha:before {
+.partida .bullets .montanha:before {
     background: #824c15;
 }
 
-.partida-card .bullets .infernal:before {
+.partida .bullets .infernal:before {
     background: #fd7500;
 }
 
-.partida-card .bullets .anciao:before {
+.partida .bullets .anciao:before {
     border-radius: 0;
     transform: rotate(45deg);
     margin-left: 1px;
@@ -145,7 +162,6 @@
 .partida-card .placar {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
 .partida-card .score {
