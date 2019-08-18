@@ -31,12 +31,34 @@
     text-align: center;
 }
 
+.partida-card .times {
+    position: relative;
+    margin-bottom: 20px;
+}
+
 .partida-card .times.blue {
     text-align: right;
 }
 
 .partida-card .times.red {
     text-align: left;
+}
+
+.partida-card .times .bullets {
+    position: absolute;
+    line-height: 1.5;
+}
+
+.partida-card .times.red .bullets {
+    left: 0;
+    right: -100%;
+    justify-content: flex-start;
+}
+
+.partida-card .times.blue .bullets {
+    left: -100%;
+    right: 0;
+    justify-content: flex-end;
 }
 
 .partida-card h5 {

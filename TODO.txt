@@ -9,6 +9,7 @@ ok:
 - pós-jogo com entrevistas dos jogadores (yt, twitch)
 - lance a lance
 - stats de drag
+- stats de gold
 
 pendentes:
 - cadastro de times
@@ -24,7 +25,6 @@ jogo:
 - socket 
 
 duvidas:
-- stats de gold
 - stats de gold parcial por jogador
 - stats de dano
 - runas
