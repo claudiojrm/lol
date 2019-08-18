@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'campeonato.apps.CampeonatoConfig',
     'jogador.apps.JogadorConfig',
     'regiao.apps.RegiaoConfig',
+    'status.apps.StatusConfig',
     'times.apps.TimesConfig',
 ]
 

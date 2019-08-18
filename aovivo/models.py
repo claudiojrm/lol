@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from campeonato.models import Campeonato
+from status.models import Status
 from times.models import Times
 from jogador.models import Jogador
 
@@ -25,12 +26,11 @@ class Partida(models.Model):
         super().save(*args, **kwargs)
 
 class Lance(models.Model):
-    cstatus = ((1, 'Pré jogo'), (2, 'Pick e Bans'), (3, 'Em andamento'), (4, 'Jogo Pausado'), (5, 'Fim de Jogo'), (6, 'Pós Jogo'), (7, 'Encerrado'))
     cstats = (('barao|Barão de Nashor', 'Barão de Nashor'),('dragao-anciao|Dragão ancião', 'Dragão ancião'),('dragao-infernal|Dragão infernal', 'Dragão infernal'),('dragao-montanha|Dragão da montanha', 'Dragão da montanha'),('dragao-oceano|Dragão do oceano', 'Dragão do oceano'),('dragao-vento|Dragão de vento', 'Dragão de vento'))
     cside = (('blue','Blue'), ('red', 'Red'))
     cembed = (('youtube', 'Youtube'), ('twitch', 'Twitch'), ('twitter', 'Twitter'))
 
-    status = models.IntegerField(choices=cstatus, default=1)
+    status = models.ForeignKey(Status, on_delete=models.CASCADE)
     order = models.IntegerField()
     side = models.CharField(max_length=10, choices=cside, blank=True)
     tempo = models.IntegerField(blank=True, default=0)
