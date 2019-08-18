@@ -16,7 +16,6 @@ pendentes:
 jogo:
 - escalação
 - pick/bans
-- runas
 - cadastro de imagens
 - links da transmissão oficial
 - video da transmissão?
@@ -27,6 +26,7 @@ duvidas:
 - stats de gold parcial por jogador
 - stats de drag
 - pós jogo com stats de dano
+- runas
 - build
 - série md1, md3, md5
 - cadastro de comissão técnica?
