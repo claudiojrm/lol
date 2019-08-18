@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 from campeonato.models import Campeonato
 from times.models import Times
+from jogador.models import Jogador
 
 class Partida(models.Model):
     titulo = models.CharField(max_length=200)

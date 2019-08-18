@@ -9,6 +9,8 @@ class LanceAdmin(SortableInlineAdminMixin, admin.StackedInline):
 class PartidaAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'slugs')
     inlines = (LanceAdmin, )
+    autocomplete_fields = ('campeonato', 'blueside', 'redside')
+    
     fields = (
         'titulo',
         'descricao',
