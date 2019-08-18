@@ -3,7 +3,7 @@ from regiao.models import Regiao
 from django.utils.text import slugify
 
 class Campeonato(models.Model):
-    slug = models.SlugField(unique=True, editable=False)
+    slug = models.SlugField(editable=False)
     nome = models.CharField(max_length=100)
     regiao = models.ForeignKey(Regiao, on_delete=models.CASCADE)
 
@@ -12,7 +12,7 @@ class Campeonato(models.Model):
     
     def save(self, *args, **kwargs):
         self.slug = slugify(self.nome)
-        super(Campeonato, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
     
     class Meta:
         ordering = ['nome']

@@ -4,28 +4,29 @@ ok:
 - cadastro de campeões do lol
 - cadastro de builds
 - flyers dos times (confronto) -> botão disponível para download
+- comentários/embedar tweets (personalidades?)
 - pós-jogo com resumo da partida
+- pós-jogo com entrevistas dos jogadores (yt, twitch)
+- lance a lance
 
 pendentes:
 - cadastro de times
 - cadastro de jogadores 
 
 jogo:
-- pós-jogo com entrevistas dos jogadores (yt, twitch)
-- pós jogo com stats de dano
 - escalação
 - pick/bans
 - runas
-- comentários/embedar tweets (personalidades?)
 - cadastro de imagens
-- lance a lance
 - links da transmissão oficial
 - video da transmissão?
+- socket 
 
 duvidas:
 - stats de gold
 - stats de gold parcial por jogador
 - stats de drag
+- pós jogo com stats de dano
 - build
 - série md1, md3, md5
 - cadastro de comissão técnica?
