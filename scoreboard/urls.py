@@ -17,12 +17,25 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework import routers
+from build.views import BuildViewSet
+from campeao.views import CampeaoViewSet
+from campeonato.views import CampeonatoViewSet
+from regiao.views import RegiaoViewSet
+from jogador.views import JogadorViewSet
+
+router = routers.DefaultRouter()
+router.register(r'build', BuildViewSet)
+router.register(r'campeao', CampeaoViewSet)
+router.register(r'campeonato', CampeonatoViewSet)
+router.register(r'regiao', RegiaoViewSet)
+router.register(r'jogador', JogadorViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('aovivo.urls')),
     path('ao-vivo/', include('aovivo.urls')),
-    path('api/', include('build.urls')),
+    path('api/', include(router.urls))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
