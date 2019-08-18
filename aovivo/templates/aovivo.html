@@ -60,13 +60,15 @@
     
     <div class="container">
         <div class="row">
-            <header class="col-xs-8 col-sm-24">
-                <h1>{{partida.titulo}}</h1>
-                <p>{{partida.descricao}}</p>
-            </header>
             <div class="col-xs-8 col-sm-16">
                 <ul class="partida-lances">
-                {% for lance in partida.lances %}
+                    <li class="fim info">
+                        <div class="lance">
+                            <h3>{{partida.titulo}}</h3>
+                            <p>{{partida.descricao}}</p>
+                        </div>
+                    </li>
+                    {% for lance in partida.lances %}
                     <li class="{% if lance.fim %}fim{% endif %} {% if lance.side %}side{% endif %} {{lance.side}}">
                         {% if not lance.fim %}
                         <div class="shortcuts">
@@ -90,27 +92,36 @@
                                 {% endif %}
                             </p>
                             {% endif %}
+                            
                             {% if lance.conteudo_embed %}
                                 {% if lance.embed == 'twitter' %}
                                     <div class="embed {{lance.embed}}">{{lance.conteudo_embed|safe}}</div>
                                 {% endif %}
                             {% endif %}
+                            
                         </div>
+                        
+                        {% if lance.imagem %}
+                            <div class="image">
+                                <img src="{{MEDIA_URL}}{{lance.imagem}}" width="100%" alt="{{lance.titulo}}">
+                            </div>
+                        {% endif %}
+
                         {% if lance.conteudo_embed %}
                             {% if lance.embed == 'youtube' or lance.embed == 'twitch' %}
                                 <div class="embed {{lance.embed}}">{{lance.conteudo_embed|safe}}</div>
                             {% endif %}
                         {% endif %}
                     </li>
-                {% endfor %}
-                {% if not partida.lances %}
-                    <li class="fim">
-                        <div class="lance">
-                            <h3>O jogo ainda não começou</h3>
-                            <p>O jogo começará em instantes, fique ligado!</p>
-                        </div>
-                    </li>
-                {% endif %}
+                    {% endfor %}
+                    {% if not partida.lances %}
+                        <li class="fim">
+                            <div class="lance">
+                                <h3>O jogo ainda não começou</h3>
+                                <p>O jogo começará em instantes, fique ligado!</p>
+                            </div>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
 

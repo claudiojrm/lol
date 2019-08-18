@@ -2,6 +2,7 @@
 
 .partida {
     background: #f5f5f5;
+    overflow-x: hidden;
 }
 .partida header {
     text-align: center;
@@ -267,7 +268,8 @@
     padding-right: 0;
 }
 
-.partida-lances .embed {
+.partida-lances .embed,
+.partida-lances .image {
     width: 100%;
 }
 
@@ -275,11 +277,17 @@
     margin-top: 15px;
 }
 
+
+.partida-lances .image,
 .partida-lances .youtube,
 .partida-lances .twitch {
     margin-top: -10px;
-    padding-bottom: 62.5%;
     position: relative;
+}
+
+.partida-lances .youtube,
+.partida-lances .twitch {
+    padding-bottom: 62.5%;
     height: 0;
 }
 
@@ -295,4 +303,16 @@
 .partida-lances .embed > * {
     width: 100%!important;
     margin-top: 0!important;
+}
+
+.partida-lances .info h3 {
+    color: #c79a3c;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1.4;
+    text-transform: none;
+}
+
+.partida-lances .info p {
+    font-size: 16px;
 }

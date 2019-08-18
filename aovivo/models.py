@@ -38,6 +38,7 @@ class Lance(models.Model):
     partida = models.ForeignKey(Partida, on_delete=models.CASCADE)
     link = models.URLField(blank=True)
     stats = models.CharField(max_length=50, choices=cstats, blank=True)
+    imagem = models.ImageField(upload_to='lances/', blank=True)
     embed = models.CharField(max_length=20, choices=cembed, blank=True)
     conteudo_embed = models.TextField(blank=True)
 
