@@ -1,7 +1,7 @@
 from rest_framework import viewsets, serializers
 from build.models import Build
 
-class BuildSerializer(serializers.HyperlinkedModelSerializer):
+class BuildSerializer(serializers.ModelSerializer):
     class Meta:
         model = Build
         fields = '__all__'

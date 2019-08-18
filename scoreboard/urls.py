@@ -18,13 +18,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
+from aovivo.views import PartidaViewSet
 from build.views import BuildViewSet
 from campeao.views import CampeaoViewSet
 from campeonato.views import CampeonatoViewSet
 from jogador.views import JogadorViewSet
 from regiao.views import RegiaoViewSet
 from times.views import TimesViewSet
-from aovivo.views import PartidaViewSet
+from status.views import StatusViewSet
 
 router = routers.DefaultRouter()
 router.register(r'build', BuildViewSet)
@@ -32,6 +33,7 @@ router.register(r'campeao', CampeaoViewSet)
 router.register(r'campeonato', CampeonatoViewSet)
 router.register(r'jogador', JogadorViewSet)
 router.register(r'regiao', RegiaoViewSet)
+router.register(r'status', StatusViewSet)
 router.register(r'times', TimesViewSet)
 router.register(r'partida', PartidaViewSet)
 

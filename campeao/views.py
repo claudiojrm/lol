@@ -1,7 +1,7 @@
 from rest_framework import viewsets, serializers
 from campeao.models import Campeao
 
-class CampeaoSerializer(serializers.HyperlinkedModelSerializer):
+class CampeaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Campeao
         fields = '__all__'

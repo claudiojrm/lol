@@ -1,7 +1,7 @@
 from rest_framework import viewsets, serializers
 from status.models import Status
 
-class StatusSerializer(serializers.HyperlinkedModelSerializer):
+class StatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = Status
         fields = '__all__'
