@@ -1,7 +1,7 @@
 from rest_framework import viewsets, serializers
 from times.models import Times
 
-class TimesSerializer(serializers.HyperlinkedModelSerializer):
+class TimesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Times
         fields = '__all__'
