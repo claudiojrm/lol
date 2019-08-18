@@ -24,7 +24,7 @@ class Partida(models.Model):
         super().save(*args, **kwargs)
 
 class Lance(models.Model):
-    cstatus = ((1, 'Pré jogo'), (2, 'Pick e Bans'), (3, 'Em andamento'), (4, 'Jogo Pausado'), (5, 'Pós Jogo'), (6, 'Encerrado'))
+    cstatus = ((1, 'Pré jogo'), (2, 'Pick e Bans'), (3, 'Em andamento'), (4, 'Jogo Pausado'), (5, 'Fim de Jogo'), (6, 'Pós Jogo'), (7, 'Encerrado'))
     cstats = (('barao|Barão de Nashor', 'Barão de Nashor'),('dragao-anciao|Dragão ancião', 'Dragão ancião'),('dragao-infernal|Dragão infernal', 'Dragão infernal'),('dragao-montanha|Dragão da montanha', 'Dragão da montanha'),('dragao-oceano|Dragão do oceano', 'Dragão do oceano'),('dragao-vento|Dragão de vento', 'Dragão de vento'))
     cside = (('blue','Blue'), ('red', 'Red'))
     cembed = (('youtube', 'Youtube'), ('twitch', 'Twitch'), ('twitter', 'Twitter'))

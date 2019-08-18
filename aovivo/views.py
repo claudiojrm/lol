@@ -5,7 +5,7 @@ from django.conf import settings
 from django.shortcuts import redirect
 
 def aovivo(request, regiao, campeonato, slug):
-    status = ('', 'Pré Jogo', 'Pick e Bans', 'Em andamento', 'Jogo Pausado', 'Pós Jogo', 'Encerrado')
+    status = ('', 'Pré Jogo', 'Pick e Bans', 'Em andamento', 'Jogo Pausado', 'Fim de Jogo', 'Pós Jogo', 'Encerrado')
     
     try:
         partida = Partida.objects.get(slug=slug, campeonato__slug=campeonato, campeonato__regiao__slug=regiao)
@@ -32,7 +32,7 @@ def aovivo(request, regiao, campeonato, slug):
     }
 
     for lance in partida.lances:
-        lance.fim = True if lance.status > 4 else False
+        lance.fim = True if lance.status > 5 else False
         lance.status = status[lance.status]
 
         if lance.stats:
