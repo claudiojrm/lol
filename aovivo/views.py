@@ -4,14 +4,15 @@ from times.models import Times
 from django.conf import settings
 from django.shortcuts import redirect
 
-def aovivo(request, slug):
+def aovivo(request, regiao, campeonato, slug):
     status = ('Pré Jogo', 'Pick e Bans', 'Em andamento', 'Jogo Pausado', 'Pós Jogo', 'Encerrado')
     
     try:
-        partida = Partida.objects.get(slug=slug)
+        partida = Partida.objects.get(slug=slug, campeonato__slug=campeonato, campeonato__regiao__slug=regiao)
     except Partida.DoesNotExist:
         partida = None
-    
+
+        
     if not partida:
         return redirect('/')
 
