@@ -24,11 +24,8 @@ def aovivo(request, regiao, campeonato, slug):
     partida.status = status[partida.lances.first().status]
 
     for lance in partida.lances:
-        if lance.status > 4:
-            lance.fim = True
-
+        lance.fim = True if lance.status > 4 else False
         lance.status = status[lance.status]
-    
 
     return render(request, 'aovivo.html', {
         'MEDIA_URL' : settings.MEDIA_URL,
