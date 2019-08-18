@@ -5,6 +5,7 @@ from django.utils.text import slugify
 class Campeonato(models.Model):
     slug = models.SlugField(editable=False)
     nome = models.CharField(max_length=100)
+    patch = models.CharField(max_length=10)
     regiao = models.ForeignKey(Regiao, on_delete=models.CASCADE)
 
     def __str__(self):

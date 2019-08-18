@@ -13,7 +13,6 @@ class PartidaAdmin(admin.ModelAdmin):
         'titulo',
         'descricao',
         'flyer',
-        'patch',
         'campeonato',
         ('redside', 'kill_redside', 'gold_redside'),
         ('blueside', 'kill_blueside', 'gold_blueside')

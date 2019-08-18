@@ -8,7 +8,6 @@ class Partida(models.Model):
     slug = models.SlugField(editable=False)
     descricao = models.TextField()
     flyer = models.ImageField(upload_to='flyer/')
-    patch = models.CharField(max_length=10)
     campeonato = models.ForeignKey(Campeonato, on_delete=models.SET_DEFAULT, default='')
     redside = models.ForeignKey(Times, on_delete=models.CASCADE, related_name='redside')
     blueside = models.ForeignKey(Times, on_delete=models.CASCADE, related_name='blueside')
