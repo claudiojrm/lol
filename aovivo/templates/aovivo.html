@@ -105,9 +105,7 @@
                             <div class="image">
                                 <img src="{{MEDIA_URL}}{{lance.imagem}}" width="100%" alt="{{lance.titulo}}">
                             </div>
-                        {% endif %}
-
-                        {% if lance.conteudo_embed %}
+                        {% elif lance.conteudo_embed %}
                             {% if lance.embed == 'youtube' or lance.embed == 'twitch' %}
                                 <div class="embed {{lance.embed}}">{{lance.conteudo_embed|safe}}</div>
                             {% endif %}

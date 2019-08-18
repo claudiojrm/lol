@@ -277,7 +277,6 @@
     margin-top: 15px;
 }
 
-
 .partida-lances .image,
 .partida-lances .youtube,
 .partida-lances .twitch {
@@ -287,6 +286,7 @@
 
 .partida-lances .youtube,
 .partida-lances .twitch {
+    background: #121212;
     padding-bottom: 62.5%;
     height: 0;
 }
