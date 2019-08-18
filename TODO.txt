@@ -15,6 +15,7 @@ pendentes:
 
 jogo:
 - escalação
+- barão/drag
 - pick/bans
 - cadastro de imagens
 - links da transmissão oficial

@@ -31,30 +31,6 @@
     text-align: left;
 }
 
-.partida-card .times .side {
-    color: #fff;
-    font-size: 10px;
-    line-height: 1;
-    margin-top: 5px;
-}
-
-.partida-card .times .side:before {
-    content: '';
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 5px;
-    height: 7px;
-    width: 7px;
-}
-
-.partida-card .times.blue .side:before {
-    background: #2c6dbd;
-}
-
-.partida-card .times.red .side:before {
-    background: #ab1b1b;
-}
-
 .partida-card h5 {
     font-size: 12px;
 }
@@ -68,6 +44,72 @@
     padding: 0 8px;
     line-height: 2.2;
     text-transform: lowercase;
+    margin: 10px 0;
+}
+
+.partida-card .legenda {
+    font-size: 11px;
+}
+
+.partida-card .legenda {
+    display: flex;
+    justify-content: center;
+}
+
+.partida-card .legenda li {
+    margin-right: 10px;
+}
+
+.partida-card .drag span,
+.partida-card .side span,
+.partida-card .side:before,
+.partida-card .barao:before,
+.partida-card .gold:before {
+    border-radius: 50%;
+    background: #fff;
+    content: '';
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 3px;
+    height: 7px;
+    width: 7px;
+}
+
+.partida-card .side:before {
+    background: #2c6dbd;
+}
+
+.partida-card .side span {
+    background: #ab1b1b;
+}
+
+.partida-card .gold:before {
+    background: #c79a3c;
+}
+
+.partida-card .barao:before {
+    background: #8e17b5;
+}
+
+.partida-card .drag .vento {
+    background: #ccc;
+}
+
+.partida-card .drag .oceano {
+    background: #41b3a8;
+}
+
+.partida-card .drag .montanha {
+    background: #824c15;
+}
+
+.partida-card .drag .infernal {
+    background: #fd7500;
+}
+
+.partida-card .drag .anciao {
+    border-radius: 0;
+    transform: rotate(45deg);
 }
 
 .partida-card abbr {
