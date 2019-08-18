@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.conf import settings
+from django.shortcuts import render, redirect
+from rest_framework import viewsets, serializers
 from aovivo.models import Partida, Lance
 from times.models import Times
-from django.conf import settings
-from django.shortcuts import redirect
+from times.views import TimesSerializer
+from campeonato.views import CampeonatoSerializer
 
 def aovivo(request, regiao, campeonato, slug):
     status = ('', 'Pré Jogo', 'Pick e Bans', 'Em andamento', 'Jogo Pausado', 'Fim de Jogo', 'Pós Jogo', 'Encerrado')
@@ -49,3 +51,29 @@ def aovivo(request, regiao, campeonato, slug):
         'MEDIA_URL' : settings.MEDIA_URL,
         'partida' : partida
     })
+        
+class PartidaSerializer(serializers.HyperlinkedModelSerializer):
+    campeonato = CampeonatoSerializer()
+    redside = TimesSerializer()
+    blueside = TimesSerializer()
+
+    class Meta:
+        model = Partida
+        fields = '__all__'
+        extra_kwargs = {
+            'url': { 
+                'lookup_field' : 'slug' 
+            }
+        }
+
+class LanceSerializer(serializers.HyperlinkedModelSerializer):
+    partida = PartidaSerializer()
+
+    class Meta:
+        model = Lance
+        fields = '__all__'
+
+class PartidaViewSet(viewsets.ModelViewSet):
+    queryset = Partida.objects.all()
+    serializer_class = PartidaSerializer
+    lookup_field = 'slug'

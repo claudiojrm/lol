@@ -21,15 +21,19 @@ from rest_framework import routers
 from build.views import BuildViewSet
 from campeao.views import CampeaoViewSet
 from campeonato.views import CampeonatoViewSet
-from regiao.views import RegiaoViewSet
 from jogador.views import JogadorViewSet
+from regiao.views import RegiaoViewSet
+from times.views import TimesViewSet
+from aovivo.views import PartidaViewSet
 
 router = routers.DefaultRouter()
 router.register(r'build', BuildViewSet)
 router.register(r'campeao', CampeaoViewSet)
 router.register(r'campeonato', CampeonatoViewSet)
-router.register(r'regiao', RegiaoViewSet)
 router.register(r'jogador', JogadorViewSet)
+router.register(r'regiao', RegiaoViewSet)
+router.register(r'times', TimesViewSet)
+router.register(r'partida', PartidaViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
