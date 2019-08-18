@@ -26,11 +26,35 @@ def aovivo(request, regiao, campeonato, slug):
     partida.blueside.gold = partida.gold_blueside
     partida.blueside.fgold = '{0:,}'.format(partida.gold_blueside)
     partida.status = status[partida.lances.first().status]
+    partida.stats = { 
+        'blue' : [
+            {'slug' : 'barao', 'nome' : 'Barão de Nashor'},
+            {'slug' : 'barao', 'nome' : 'Barão de Nashor'}
+        ],
+        'red' : [
+            {'slug' : 'dragao-infernal', 'nome' : 'Dragão Infernal'},
+            {'slug' : 'dragao-montanha', 'nome' : 'Dragão da Montanha'},
+            {'slug' : 'dragao-infernal', 'nome' : 'Dragão Infernal'},
+            {'slug' : 'dragao-montanha', 'nome' : 'Dragão da Montanha'},
+            {'slug' : 'dragao-anciao', 'nome' : 'Dragão Ancião'},
+            {'slug' : 'barao', 'nome' : 'Barão de Nashor'}
+        ] 
+    }
 
     for lance in partida.lances:
         lance.fim = True if lance.status > 4 else False
         lance.status = status[lance.status]
 
+        if lance.stats:
+            stats = lance.stats.split('|')
+            partida.stats[lance.side].append({
+                'slug' : stats[0],
+                'nome' : stats[1]
+            })
+
+    partida.stats['red'].sort(key=lambda x:x['slug'].split('-')[0])
+    partida.stats['blue'].sort(key=lambda x:x['slug'].split('-')[0])
+    
     return render(request, 'aovivo.html', {
         'MEDIA_URL' : settings.MEDIA_URL,
         'partida' : partida

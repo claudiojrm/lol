@@ -11,6 +11,7 @@ ok:
 - stats de drag
 - stats de gold
 - barão/drag
+- pick/bans
 
 pendentes:
 - cadastro de times
@@ -18,7 +19,6 @@ pendentes:
 
 jogo:
 - escalação
-- pick/bans
 - cadastro de imagens
 - links da transmissão oficial
 - video da transmissão?
@@ -32,6 +32,7 @@ duvidas:
 - série md1, md3, md5
 - cadastro de comissão técnica?
 - tabela de classificação (criar uma área de classificação?) 
+- jogos do dia
 - jogadas com áudio (double kill, triple kill, quadra kill, peeeenta kill)
 - deixar colaboradores cadastrarem jogos?
 - cartola?

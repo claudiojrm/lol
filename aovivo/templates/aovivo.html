@@ -7,16 +7,16 @@
     <div class="partida-card">
         <div class="placar">
             <div class="times blue">
-                <abbr title="{{partida.blueside.nome}}">{{partida.blueside.abreviatura}}</abbr> 
-                <img src="{{MEDIA_URL}}{{partida.blueside.imagem}}" width="30">
                 <div class="bullets">
                     <span class="blue" title="Blue side"></span>
-                    
-                    {% if partida.blueside.gold > 0 %}
-                        <span class="gold" data-text="{{partida.blueside.fgold}} g" title="Quantidade de ouro"></span>
-                    {% endif %}
-                    
-                    {% for stat in partida.redside.stats %}
+                    <span class="gold" data-text="{{partida.blueside.fgold}} g" title="Quantidade de ouro"></span>
+                </div>
+                
+                <abbr title="{{partida.blueside.nome}}">{{partida.blueside.abreviatura}}</abbr> 
+                <img src="{{MEDIA_URL}}{{partida.blueside.imagem}}" width="30">
+                
+                <div class="bullets">
+                    {% for stat in partida.stats.blue %}
                         <span class="{{stat.slug}}" title="{{stat.nome}}"></span>
                     {% endfor %}
                 </div>
@@ -27,16 +27,16 @@
                 <span class="kill">{{partida.redside.kill}}</span>
             </div>
             <div class="times red">
-                <img src="{{MEDIA_URL}}{{partida.redside.imagem}}" width="30"> 
-                <abbr title="{{partida.redside.nome}}">{{partida.redside.abreviatura}}</abbr>
                 <div class="bullets">
                     <span class="red" title="Red side"></span>
-                    
-                    {% if partida.redside.gold > 0 %}
-                        <span class="gold" data-text="{{partida.redside.fgold}} g" title="Quantidade de ouro"></span>
-                    {% endif %}
-                    
-                    {% for stat in partida.redside.stats %}
+                    <span class="gold" data-text="{{partida.redside.fgold}} g" title="Quantidade de ouro"></span>
+                </div>
+
+                <img src="{{MEDIA_URL}}{{partida.redside.imagem}}" width="30"> 
+                <abbr title="{{partida.redside.nome}}">{{partida.redside.abreviatura}}</abbr>
+
+                <div class="bullets stats">
+                    {% for stat in partida.stats.red %}
                         <span class="{{stat.slug}}" title="{{stat.nome}}"></span>
                     {% endfor %}
                 </div>
@@ -44,18 +44,18 @@
         </div>
 
         <div class="status">{{partida.status}}</div>
-    </div>
-
-    <div class="bullets describe">
-        <span class="blue" title="Blue side"></span>
-        <span class="red" data-text="side" title="Red side"></span>
-        <span class="barao" data-text="barão" title="Barão de Nashor"></span>
-        <span class="gold" data-text="ouro" title="Quantidade de ouro"></span>
-        <span class="anciao" title="Dragão ancião"></span>
-        <span class="vento" title="Dragão de vento"></span>
-        <span class="oceano" title="Dragão de oceano"></span>
-        <span class="montanha" title="Dragão da montanha"></span>
-        <span class="infernal" data-text="dragões" title="Dragão infernal"></span>
+        
+        <div class="bullets describe">
+            <span class="blue" title="Blue side"></span>
+            <span class="red" data-text="side" title="Red side"></span>
+            <span class="barao" data-text="barão" title="Barão de Nashor"></span>
+            <span class="gold" data-text="ouro" title="Quantidade de ouro"></span>
+            <span class="dragao-anciao" title="Dragão ancião"></span>
+            <span class="dragao-vento" title="Dragão de vento"></span>
+            <span class="dragao-oceano" title="Dragão de oceano"></span>
+            <span class="dragao-montanha" title="Dragão da montanha"></span>
+            <span class="dragao-infernal" data-text="dragões" title="Dragão infernal"></span>
+        </div>
     </div>
     
     <div class="container">
