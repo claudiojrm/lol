@@ -16,7 +16,7 @@
 }
 
 .partida-card {
-    background: #121212;
+    box-shadow: 0 0 5px #222;
     position: sticky;
     z-index: 1;
     top: 0;
@@ -25,14 +25,10 @@
 .partida-card,
 .partida h5,
 .partida .bullets.describe {
+    background: #121212;
     color: #fff;
     padding: 10px 0;
     text-align: center;
-}
-
-.partida h5,
-.partida .bullets.describe {
-    background: #191919;
 }
 
 .partida-card .times.blue {
@@ -90,27 +86,11 @@
 .partida-card .times .gold:after {
     display: inline-block;
     margin-right: 10px;
-}
-
-.partida .bullets.describe .red:after {
-    content: 'side';
-}
-
-.partida .bullets.describe .barao:after {
-    content: 'barão';
+    content: attr(data-text);
 }
 
 .partida-card .times .gold:after {
-    content: attr(data-gold);
     margin-right: 5px;
-}
-
-.partida .bullets.describe .gold:after {
-    content: 'ouro';
-}
-
-.partida .bullets.describe .infernal:after {
-    content: 'dragão';
 }
 
 .partida .bullets .blue:before {
