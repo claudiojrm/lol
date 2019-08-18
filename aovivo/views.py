@@ -27,18 +27,8 @@ def aovivo(request, regiao, campeonato, slug):
     partida.blueside.fgold = '{0:,}'.format(partida.gold_blueside)
     partida.status = status[partida.lances.first().status]
     partida.stats = { 
-        'blue' : [
-            {'slug' : 'barao', 'nome' : 'Barão de Nashor'},
-            {'slug' : 'barao', 'nome' : 'Barão de Nashor'}
-        ],
-        'red' : [
-            {'slug' : 'dragao-infernal', 'nome' : 'Dragão Infernal'},
-            {'slug' : 'dragao-montanha', 'nome' : 'Dragão da Montanha'},
-            {'slug' : 'dragao-infernal', 'nome' : 'Dragão Infernal'},
-            {'slug' : 'dragao-montanha', 'nome' : 'Dragão da Montanha'},
-            {'slug' : 'dragao-anciao', 'nome' : 'Dragão Ancião'},
-            {'slug' : 'barao', 'nome' : 'Barão de Nashor'}
-        ] 
+        'blue' : [],
+        'red' : [] 
     }
 
     for lance in partida.lances:
