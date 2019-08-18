@@ -1,35 +1,40 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<div class="partida container-fluid">
-    <header class="row">
-        <h1>{{partida.titulo}}</h1>
-        <p>{{partida.descricao}}</p>
-    </header>
-    <div class="partida-card row">
-        <h5 class="col-xs-8 col-sm-24">{{partida.campeonato}} - Patch: <b>{{partida.patch}}</b></h5>
-        
-        <div class="col-xs-3 col-sm-10 times blue">
-            <abbr title="{{partida.blueside.nome}}">{{partida.blueside.abreviatura}}</abbr> 
-            <img src="{{MEDIA_URL}}{{partida.blueside.imagem}}" width="30">
-            <div class="side">blue side</div>
+<div class="partida">
+    <div class="partida-card">
+        <div class="container-fluid">
+            <div class="row">
+                <h5 class="col-xs-8 col-sm-24">{{partida.campeonato}} - Patch: <b>{{partida.patch}}</b></h5>
+                
+                <div class="col-xs-3 col-sm-10 times blue">
+                    <abbr title="{{partida.blueside.nome}}">{{partida.blueside.abreviatura}}</abbr> 
+                    <img src="{{MEDIA_URL}}{{partida.blueside.imagem}}" width="30">
+                    <div class="side">blue side</div>
+                </div>
+                <div class="col-xs-2 col-sm-4 placar">
+                    <span class="kill">{{partida.blueside.kill}}</span> 
+                    <span class="vs">x</span>
+                    <span class="kill">{{partida.redside.kill}}</span>
+                </div>
+                <div class="col-xs-3 col-sm-10 times red">
+                    <img src="{{MEDIA_URL}}{{partida.redside.imagem}}" width="30"> 
+                    <abbr title="{{partida.redside.nome}}">{{partida.redside.abreviatura}}</abbr>
+                    <div class="side">red side</div>
+                </div>
+                <div class="col-xs-8"><span class="status">{{partida.status}}</span></div>
+            </div>
         </div>
-        <div class="col-xs-2 col-sm-4 placar">
-            <span class="kill">{{partida.blueside.kill}}</span> 
-            <span class="vs">x</span>
-            <span class="kill">{{partida.redside.kill}}</span>
-        </div>
-        <div class="col-xs-3 col-sm-10 times red">
-            <img src="{{MEDIA_URL}}{{partida.redside.imagem}}" width="30"> 
-            <abbr title="{{partida.redside.nome}}">{{partida.redside.abreviatura}}</abbr>
-            <div class="side">red side</div>
-        </div>
-        <div class="col-xs-8"><span class="status">{{partida.status}}</span></div>
     </div>
-
-    {% if partida.lances %}
+    
     <div class="container">
         <div class="row">
+            <header class="col-xs-8 col-sm-24">
+                <h1>{{partida.titulo}}</h1>
+                <p>{{partida.descricao}}</p>
+            </header>
+    
+            {% if partida.lances %}
             <div class="col-xs-8 col-sm-16">
                 <ul class="partida-lances">
                 {% for lance in partida.lances %}
@@ -57,18 +62,19 @@
                             </p>
                             {% endif %}
     
-                            {% if lance.embed == 'youtube' %}
-                                <div class="embed {{lance.embed}}">{{lance.conteudo_embed|safe}}</div>
-                            {% endif %}
+                            {% if lance.conteudo_embed %}
+                                {% if lance.embed == 'youtube' %}
+                                    <div class="embed {{lance.embed}}">{{lance.conteudo_embed|safe}}</div>
+                                {% endif %}
+                            {% endif %}                            
                         </div>
                     </li>
                 {% endfor %}
-            </ul>
+                </ul>
             </div>
+            {% endif %}
+
         </div>
     </div>
-    {% endif %}
-
-</div>
 
 {% endblock %}

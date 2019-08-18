@@ -7,6 +7,7 @@ class LanceAdmin(SortableInlineAdminMixin, admin.StackedInline):
     extra = 1
 
 class PartidaAdmin(admin.ModelAdmin):
+    list_display = ('titulo', 'slug')
     inlines = (LanceAdmin, )
 
 admin.site.register(Partida, PartidaAdmin)

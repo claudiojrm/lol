@@ -1,9 +1,11 @@
 from django.db import models
+from django.utils.text import slugify
 from campeonato.models import Campeonato
 from times.models import Times
 
 class Partida(models.Model):
     titulo = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True, editable=False)
     descricao = models.TextField()
     flyer = models.ImageField(upload_to='flyer/')
     patch = models.CharField(max_length=10)
@@ -15,6 +17,10 @@ class Partida(models.Model):
 
     def __str__(self):
         return self.titulo
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.titulo)
+        super(Partida, self).save(*args, **kwargs)
 
 class Lance(models.Model):
     status = models.IntegerField(choices=((1, 'Pré jogo'), (2, 'Pick e Bans'), (3, 'Em andamento'), (4, 'Jogo Pausado'), (5, 'Pós Jogo'), (6, 'Encerrado')), default=1)

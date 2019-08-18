@@ -2,10 +2,19 @@ from django.shortcuts import render
 from aovivo.models import Partida, Lance
 from times.models import Times
 from django.conf import settings
+from django.shortcuts import redirect
 
-def aovivo(request):
+def aovivo(request, slug):
     status = ('Pré Jogo', 'Pick e Bans', 'Em andamento', 'Jogo Pausado', 'Pós Jogo', 'Encerrado')
-    partida = Partida.objects.all()[0]
+    
+    try:
+        partida = Partida.objects.get(slug=slug)
+    except Partida.DoesNotExist:
+        partida = None
+    
+    if not partida:
+        return redirect('/')
+
     partida.lances = Lance.objects.filter(partida=partida.id).reverse()
     
     partida.redside = Times.objects.get(redside=partida.id)

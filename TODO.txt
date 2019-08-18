@@ -11,27 +11,25 @@ pendentes:
 - cadastro de jogadores 
 
 jogo:
-- pós-jogo com entrevistas dos jogadores (yt)
+- pós-jogo com entrevistas dos jogadores (yt, twitch)
 - pós jogo com stats de dano
 - escalação
 - pick/bans
 - runas
-- build
 - comentários/embedar tweets (personalidades?)
 - cadastro de imagens
 - lance a lance
-- jogadas com áudio (double kill, triple kill, quadra kill, peeeenta kill)
 - links da transmissão oficial
-- stats de gold
-- stats de gold parcial por jogador
-- stats de drag
 - video da transmissão?
 
 duvidas:
+- stats de gold
+- stats de gold parcial por jogador
+- stats de drag
+- build
 - série md1, md3, md5
 - cadastro de comissão técnica?
 - tabela de classificação (criar uma área de classificação?) 
-- cartola?
+- jogadas com áudio (double kill, triple kill, quadra kill, peeeenta kill)
 - deixar colaboradores cadastrarem jogos?
 - cartola?
-- cadastro de comissão técnica?
