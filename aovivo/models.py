@@ -21,10 +21,12 @@ class Lance(models.Model):
     order = models.IntegerField()
     side = models.CharField(max_length=10, choices=(('blue','Blue'), ('red', 'Red')), blank=True)
     tempo = models.IntegerField(blank=True, default=0)
-    titulo = models.CharField(max_length=200)
+    titulo = models.CharField(max_length=200, blank=True)
     descricao = models.TextField()
     partida = models.ForeignKey(Partida, on_delete=models.CASCADE)
     link = models.URLField(blank=True)
+    embed = models.CharField(max_length=20, choices=(('youtube', 'Youtube'),), blank=True)
+    conteudo_embed = models.TextField(blank=True)
 
     def __str__(self):
         return self.titulo

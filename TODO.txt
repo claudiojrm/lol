@@ -4,23 +4,21 @@ ok:
 - cadastro de campeões do lol
 - cadastro de builds
 - flyers dos times (confronto) -> botão disponível para download
+- pós-jogo com resumo da partida
 
 pendentes:
 - cadastro de times
 - cadastro de jogadores 
-- cadastro de comissão técnica?
-- cartola?
 
 jogo:
-- pós-jogo com entrevistas dos jogadores
-- pós-jogo com resumo da partida
+- pós-jogo com entrevistas dos jogadores (yt)
 - pós jogo com stats de dano
 - escalação
 - pick/bans
 - runas
 - build
 - comentários/embedar tweets (personalidades?)
-- embedar tweets
+- cadastro de imagens
 - lance a lance
 - jogadas com áudio (double kill, triple kill, quadra kill, peeeenta kill)
 - links da transmissão oficial
@@ -35,3 +33,5 @@ duvidas:
 - tabela de classificação (criar uma área de classificação?) 
 - cartola?
 - deixar colaboradores cadastrarem jogos?
+- cartola?
+- cadastro de comissão técnica?

@@ -28,31 +28,47 @@
     </div>
 
     {% if partida.lances %}
-        <ul class="partida-lances container">
-            {% for lance in partida.lances %}
-                <li class="{% if lance.fim %}fim{% endif %} {% if lance.side %}side{% endif %} {{lance.side}}">
-                    {% if not lance.fim %}
-                    <div class="shortcuts">
-                        {% if lance.tempo %}
-                        <time>{{lance.tempo}}'</time>
-                        {% else %}
-                        <div class="status">{{lance.status}}</div>
-                        {% endif %}
-                    </div>
-                    {% endif %}
-                    <div class="lance">
-                        <h3>{{lance.titulo}}</h3>
-                        <p>
-                            {{lance.descricao}} 
-                            {% if lance.link %}
-                                <a href="{{lance.link}}" target="_blank">Leia mais</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-sm-16">
+                <ul class="partida-lances">
+                {% for lance in partida.lances %}
+                    <li class="{% if lance.fim %}fim{% endif %} {% if lance.side %}side{% endif %} {{lance.side}}">
+                        {% if not lance.fim %}
+                        <div class="shortcuts">
+                            {% if lance.tempo %}
+                                <time>{{lance.tempo}}'</time>
+                            {% elif lance.status %}
+                                <div class="status">{{lance.status}}</div>
                             {% endif %}
-                        </p>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
+                        </div>
+                        {% endif %}
+                        <div class="lance">
+                            {% if lance.titulo %}
+                                <h3>{{lance.titulo}}</h3>
+                            {% endif %}
+
+                            {% if lance.descricao %}
+                            <p>
+                                {{lance.descricao}} 
+                                {% if lance.link %}
+                                    <a href="{{lance.link}}" target="_blank">Leia mais</a>
+                                {% endif %}
+                            </p>
+                            {% endif %}
+    
+                            {% if lance.embed == 'youtube' %}
+                                <div class="embed {{lance.embed}}">{{lance.conteudo_embed|safe}}</div>
+                            {% endif %}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            </div>
+        </div>
+    </div>
     {% endif %}
+
 </div>
 
 {% endblock %}
