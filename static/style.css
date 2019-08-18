@@ -94,13 +94,14 @@
 
 .partida-lances li {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .partida-lances .shortcuts {
     border-right: 1px solid #eaeaea;
     flex: 1;
-    min-width: 100px;
-    max-width: 100px;
+    min-width: 90px;
+    max-width: 90px;
     padding: 20px 10px;
     position: relative;
     text-align: center;
@@ -176,18 +177,24 @@
     padding-right: 0;
 }
 
-.partida-lances .youtube,
-.partida-lances .twitter {
-    position: relative;
+.partida-lances .embed {
+    width: 100%;
+}
+
+.partida-lances .lance .embed:not(:first-child) {
     margin-top: 15px;
 }
 
-.partida-lances .youtube {
+.partida-lances .youtube,
+.partida-lances .twitch {
+    margin-top: -10px;
     padding-bottom: 62.5%;
+    position: relative;
     height: 0;
 }
 
-.partida-lances .youtube iframe {
+.partida-lances .youtube iframe,
+.partida-lances .twitch iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -195,6 +202,7 @@
     height: 100%;
 }
 
-.partida-lances .twitter > * {
+.partida-lances .embed > * {
     width: 100%!important;
+    margin-top: 0!important;
 }

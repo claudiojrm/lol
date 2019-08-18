@@ -60,13 +60,17 @@
                                 {% endif %}
                             </p>
                             {% endif %}
-    
                             {% if lance.conteudo_embed %}
-                                {% if lance.embed == 'youtube' or lance.embed == 'twitter' %}
+                                {% if lance.embed == 'twitter' %}
                                     <div class="embed {{lance.embed}}">{{lance.conteudo_embed|safe}}</div>
                                 {% endif %}
-                            {% endif %}                            
+                            {% endif %}
                         </div>
+                        {% if lance.conteudo_embed %}
+                            {% if lance.embed == 'youtube' or lance.embed == 'twitch' %}
+                                <div class="embed {{lance.embed}}">{{lance.conteudo_embed|safe}}</div>
+                            {% endif %}
+                        {% endif %}
                     </li>
                 {% endfor %}
                 {% if not partida.lances %}

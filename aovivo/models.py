@@ -28,10 +28,10 @@ class Lance(models.Model):
     side = models.CharField(max_length=10, choices=(('blue','Blue'), ('red', 'Red')), blank=True)
     tempo = models.IntegerField(blank=True, default=0)
     titulo = models.CharField(max_length=200, blank=True)
-    descricao = models.TextField()
+    descricao = models.TextField(blank=True)
     partida = models.ForeignKey(Partida, on_delete=models.CASCADE)
     link = models.URLField(blank=True)
-    embed = models.CharField(max_length=20, choices=(('youtube', 'Youtube'), ('twitter', 'Twitter')), blank=True)
+    embed = models.CharField(max_length=20, choices=(('youtube', 'Youtube'), ('twitch', 'Twitch'), ('twitter', 'Twitter')), blank=True)
     conteudo_embed = models.TextField(blank=True)
 
     def __str__(self):
