@@ -17,6 +17,8 @@ class Partida(models.Model):
     kill_blueside = models.IntegerField(default=0)
     gold_redside = models.IntegerField(default=0)
     gold_blueside = models.IntegerField(default=0)
+    torre_redside = models.IntegerField(default=0)
+    torre_blueside = models.IntegerField(default=0)
 
     def __str__(self):
         return self.titulo

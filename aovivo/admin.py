@@ -9,15 +9,15 @@ class LanceAdmin(SortableInlineAdminMixin, admin.StackedInline):
 class PartidaAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'slugs')
     inlines = (LanceAdmin, )
-    autocomplete_fields = ('campeonato', 'blueside', 'redside')
+    autocomplete_fields = ('campeonato',)
     
     fields = (
         'titulo',
         'descricao',
         'flyer',
         'campeonato',
-        ('blueside', 'kill_blueside', 'gold_blueside'),
-        ('redside', 'kill_redside', 'gold_redside')
+        ('blueside', 'kill_blueside', 'gold_blueside', 'torre_blueside'),
+        ('redside', 'kill_redside', 'gold_redside', 'torre_redside')
     )
 
     def slugs(self, obj):

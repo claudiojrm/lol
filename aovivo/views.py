@@ -22,11 +22,13 @@ def aovivo(request, regiao, campeonato, slug):
     partida.redside.kill = partida.kill_redside
     partida.redside.gold = partida.gold_redside
     partida.redside.fgold = '{0:,}'.format(partida.gold_redside)
+    partida.redside.torre = partida.torre_redside
     partida.blueside = Times.objects.get(blueside=partida.id)
     partida.blueside.kill = partida.kill_blueside
     partida.blueside.gold = partida.gold_blueside
     partida.blueside.fgold = '{0:,}'.format(partida.gold_blueside)
-    
+    partida.blueside.torre = partida.torre_blueside
+
     partida.status = partida.lances.first().status if partida.lances else 'Pré Jogo'
 
     partida.stats = { 

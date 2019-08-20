@@ -118,7 +118,7 @@ body {
 }
 
 .partida .gold svg {
-    fill: #c79a3c;
+    fill: #c89a3c;
     height: 24px;
     margin: -4px 0;
     width: 24px;
@@ -189,7 +189,22 @@ body {
 
 .partida-card .vs {
     font-size: 11px;
-    visibility: middle;
+}
+
+.partida-card .towers {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    line-height: 1.4;
+}
+
+.partida-card .towers svg {
+    fill: #c89a3c;
+    height: 14px;
+    vertical-align: middle;
+    margin: 0 2px;
+    width: 14px;
 }
 
 .partida-lances li {

@@ -12,11 +12,11 @@ ok:
 - stats de gold
 - barão/drag
 - cadastro de imagens
+- torres
 
 pendentes:
 - cadastro de times
 - cadastro de jogadores 
-- torres
 
 jogo:
 - escalação
