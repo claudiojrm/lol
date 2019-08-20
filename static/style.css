@@ -20,7 +20,7 @@ body {
 }
 
 .partida-card {
-    box-shadow: 0 2px 5px #222;
+    box-shadow: 0 0 5px #222;
     position: sticky;
     z-index: 1;
     top: 0;
@@ -30,7 +30,7 @@ body {
 .partida h5 {
     background: #121212;
     color: #fff;
-    padding: 5px 0;
+    padding: 10px 0;
     text-align: center;
 }
 
@@ -51,11 +51,11 @@ body {
     line-height: 1.5;
 }
 
-.partida-card .times.red .bullets {
+.partida-card .times.red .label {
     justify-content: flex-start;
 }
 
-.partida-card .times.blue .bullets {
+.partida-card .times.blue .label {
     justify-content: flex-end;
 }
 
@@ -75,21 +75,21 @@ body {
     text-transform: lowercase;
 }
 
-.partida .bullets {
+.partida .label {
     font-size: 11px;
     line-height: 1.5;
 }
 
-.partida .bullets {
+.partida .label {
     display: flex;
     justify-content: center;
 }
 
-.partida .bullets li {
+.partida .label li {
     margin-right: 10px;
 }
 
-.partida .bullets span:before {
+.partida .label .bullet:before {
     border-radius: 50%;
     background: #fff;
     content: '';
@@ -97,51 +97,31 @@ body {
     width: 7px;
 }
 
-.partida .bullets span:before,
-.partida .bullets svg {
+.partida .label .bullet:before,
+.partida .label svg {
     cursor: pointer;
     display: inline-block;
     margin-right: 3px;
 }
 
-.partida .bullets svg {
+.partida .label svg {
     width: 14px;
     height: 14px;
 }
 
-.partida .bullets.describe {
-    margin-top: 10px;
-    border-top: 1px solid #191919;
-    padding-top: 5px;
-}
-
-.partida .bullets.describe .red:after,
-.partida .bullets.describe .gold:after,
-.partida .bullets.describe .barao:after,
-.partida-card .times .gold:after {
-    display: inline-block;
-    margin-right: 10px;
-    content: attr(data-text);
-}
-
-.partida-card .times .gold:after {
-    margin-right: 5px;
-}
-
-.partida .bullets .blue:before {
-    background: #2c6dbd;
-}
-
-.partida .bullets .red:before {
-    background: #ab1b1b;
-}
-
-.partida .bullets .gold:before {
-    background: #c79a3c;
-}
-
-.partida .bullets .barao:before {
+.partida .label .barao:before {
     background: #8e17b5;
+}
+
+.partida .gold {
+    display: flex;
+}
+
+.partida .gold svg {
+    fill: #c79a3c;
+    height: 24px;
+    margin: -4px 0;
+    width: 24px;
 }
 
 .partida .dragao-vento {
@@ -164,11 +144,32 @@ body {
     fill: #fff;
 }
 
-.partida-card abbr {
+.partida-card .times abbr {
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
     vertical-align: middle;
+}
+
+.partida .times.blue abbr:before,
+.partida .times.red abbr:after {
+    content: '';
+    display: inline-block;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-top: -4px;
+}
+
+.partida .times.blue abbr:before {
+    background: #2c6dbd;
+    margin-right: 5px;
+}
+
+.partida .times.red abbr:after {
+    background: #ab1b1b;
+    margin-left: 5px;
 }
 
 .partida-card .placar {
@@ -177,7 +178,7 @@ body {
 }
 
 .partida-card .score {
-    margin: 18px 10px 0;
+    margin: 23px 10px 0;
 }
 
 .partida-card .kill {

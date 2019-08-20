@@ -7,15 +7,17 @@
     <div class="partida-card">
         <div class="placar">
             <div class="times blue">
-                <div class="bullets">
-                    <span class="blue" title="Blue side"></span>
-                    <span class="gold" data-text="{{partida.blueside.fgold}} g" title="Quantidade de ouro"></span>
+                <div class="label">
+                    <span class="gold">
+                        <svg class="{{stat.slug}}" title="{{stat.nome}}"><use xlink:href="#svg-gold"></use></svg> 
+                        <span>{{partida.blueside.fgold}} g</span>
+                    </span>
                 </div>
                 
                 <abbr title="{{partida.blueside.nome}}">{{partida.blueside.abreviatura}}</abbr> 
                 <img src="{{MEDIA_URL}}{{partida.blueside.imagem}}" width="30">
                 
-                <div class="bullets">
+                <div class="label">
                     {% for stat in partida.stats.blue %}
                         {% if 'dragao' in stat.slug %}
                             <svg class="{{stat.slug}}" title="{{stat.nome}}"><use xlink:href="#svg-dragon"></use></svg> 
@@ -31,15 +33,17 @@
                 <span class="kill">{{partida.redside.kill}}</span>
             </div>
             <div class="times red">
-                <div class="bullets">
-                    <span class="red" title="Red side"></span>
-                    <span class="gold" data-text="{{partida.redside.fgold}} g" title="Quantidade de ouro"></span>
+                <div class="label">
+                    <span class="gold">
+                        <svg class="{{stat.slug}}" title="{{stat.nome}}"><use xlink:href="#svg-gold"></use></svg> 
+                        <span>{{partida.redside.fgold}} g</span>
+                    </span>
                 </div>
 
                 <img src="{{MEDIA_URL}}{{partida.redside.imagem}}" width="30"> 
                 <abbr title="{{partida.redside.nome}}">{{partida.redside.abreviatura}}</abbr>
 
-                <div class="bullets stats">
+                <div class="label stats">
                     {% for stat in partida.stats.red %}
                         {% if 'dragao' in stat.slug %}
                             <svg class="{{stat.slug}}" title="{{stat.nome}}"><use xlink:href="#svg-dragon"></use></svg> 
@@ -52,13 +56,6 @@
         </div>
 
         <div class="status">{{partida.status}}</div>
-        
-        <div class="bullets describe">
-            <span class="blue" title="Blue side"></span>
-            <span class="red" data-text="side" title="Red side"></span>
-            <span class="barao" data-text="barão" title="Barão de Nashor"></span>
-            <span class="gold" data-text="ouro" title="Quantidade de ouro"></span>
-        </div>
     </div>
     
     <div class="container">
