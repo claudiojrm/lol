@@ -17,7 +17,11 @@
                 
                 <div class="bullets">
                     {% for stat in partida.stats.blue %}
-                        <span class="{{stat.slug}}" title="{{stat.nome}}"></span>
+                        {% if 'dragao' in stat.slug %}
+                            <svg class="{{stat.slug}}" title="{{stat.nome}}"><use xlink:href="#svg-dragon"></use></svg> 
+                        {% else %}
+                            <span class="{{stat.slug}}" title="{{stat.nome}}"></span>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
@@ -37,7 +41,11 @@
 
                 <div class="bullets stats">
                     {% for stat in partida.stats.red %}
-                        <span class="{{stat.slug}}" title="{{stat.nome}}"></span>
+                        {% if 'dragao' in stat.slug %}
+                            <svg class="{{stat.slug}}" title="{{stat.nome}}"><use xlink:href="#svg-dragon"></use></svg> 
+                        {% else %}
+                            <span class="{{stat.slug}}" title="{{stat.nome}}"></span>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
@@ -50,11 +58,6 @@
             <span class="red" data-text="side" title="Red side"></span>
             <span class="barao" data-text="barão" title="Barão de Nashor"></span>
             <span class="gold" data-text="ouro" title="Quantidade de ouro"></span>
-            <span class="dragao-anciao" title="Dragão ancião"></span>
-            <span class="dragao-vento" title="Dragão de vento"></span>
-            <span class="dragao-oceano" title="Dragão de oceano"></span>
-            <span class="dragao-montanha" title="Dragão da montanha"></span>
-            <span class="dragao-infernal" data-text="dragões" title="Dragão infernal"></span>
         </div>
     </div>
     
@@ -76,6 +79,10 @@
                                 <time>{{lance.tempo}}'</time>
                             {% elif lance.status %}
                                 <div class="status">{{lance.status}}</div>
+                            {% endif %}
+                            
+                            {% if lance.stats %}
+                                <svg class="{{lance.stats.slug}}" title="{{lance.stats.nome}}"><use xlink:href="#svg-dragon"></use></svg>
                             {% endif %}
                         </div>
                         {% endif %}
@@ -126,4 +133,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}

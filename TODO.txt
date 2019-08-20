@@ -16,6 +16,7 @@ ok:
 pendentes:
 - cadastro de times
 - cadastro de jogadores 
+- torres
 
 jogo:
 - escalação

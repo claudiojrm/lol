@@ -93,11 +93,20 @@ body {
     border-radius: 50%;
     background: #fff;
     content: '';
+    height: 7px;
+    width: 7px;
+}
+
+.partida .bullets span:before,
+.partida .bullets svg {
     cursor: pointer;
     display: inline-block;
     margin-right: 3px;
-    height: 7px;
-    width: 7px;
+}
+
+.partida .bullets svg {
+    width: 14px;
+    height: 14px;
 }
 
 .partida .bullets.describe {
@@ -109,7 +118,6 @@ body {
 .partida .bullets.describe .red:after,
 .partida .bullets.describe .gold:after,
 .partida .bullets.describe .barao:after,
-.partida .bullets.describe .dragao-infernal:after,
 .partida-card .times .gold:after {
     display: inline-block;
     margin-right: 10px;
@@ -136,27 +144,24 @@ body {
     background: #8e17b5;
 }
 
-.partida .bullets .dragao-vento:before {
-    background: #ccc;
+.partida .dragao-vento {
+    fill: #b3b3b3;
 }
 
-.partida .bullets .dragao-oceano:before {
-    background: #41b3a8;
+.partida .dragao-oceano {
+    fill: #41b3a8;
 }
 
-.partida .bullets .dragao-montanha:before {
-    background: #824c15;
+.partida .dragao-montanha {
+    fill: #ae7438;
 }
 
-.partida .bullets .dragao-infernal:before {
-    background: #fd7500;
+.partida .dragao-infernal {
+    fill: #fd7500;
 }
 
-.partida .bullets .dragao-anciao:before {
-    border-radius: 0;
-    transform: rotate(45deg);
-    margin-left: 1px;
-    margin-right: 4px;
+.partida .dragao-anciao {
+    fill: #fff;
 }
 
 .partida-card abbr {
@@ -226,6 +231,14 @@ body {
     right: -5px;
     height: 10px;
     width: 10px;
+}
+
+.side .shortcuts svg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: -12px;
+    top: 50px;
 }
 
 .side.red .shortcuts:after {

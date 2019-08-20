@@ -16,8 +16,8 @@ class PartidaAdmin(admin.ModelAdmin):
         'descricao',
         'flyer',
         'campeonato',
-        ('redside', 'kill_redside', 'gold_redside'),
-        ('blueside', 'kill_blueside', 'gold_blueside')
+        ('blueside', 'kill_blueside', 'gold_blueside'),
+        ('redside', 'kill_redside', 'gold_redside')
     )
 
     def slugs(self, obj):

@@ -26,7 +26,9 @@ def aovivo(request, regiao, campeonato, slug):
     partida.blueside.kill = partida.kill_blueside
     partida.blueside.gold = partida.gold_blueside
     partida.blueside.fgold = '{0:,}'.format(partida.gold_blueside)
-    partida.status = partida.lances.first().status
+    
+    partida.status = partida.lances.first().status if partida.lances else 'Pré Jogo'
+
     partida.stats = { 
         'blue' : [],
         'red' : [] 
@@ -38,10 +40,12 @@ def aovivo(request, regiao, campeonato, slug):
 
         if lance.stats and lance.side:
             stats = lance.stats.split('|')
-            partida.stats[lance.side].append({
+            lance.stats = {
                 'slug' : stats[0],
                 'nome' : stats[1]
-            })
+            }
+
+            partida.stats[lance.side].append(lance.stats)
 
     partida.stats['red'].sort(key=lambda x:x['slug'].split('-')[0])
     partida.stats['blue'].sort(key=lambda x:x['slug'].split('-')[0])
