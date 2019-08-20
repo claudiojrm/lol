@@ -178,7 +178,7 @@ body {
 }
 
 .partida-card .score {
-    margin: 23px 10px 0;
+    margin: 0 10px;
 }
 
 .partida-card .kill {
@@ -196,11 +196,12 @@ body {
     display: flex;
     font-size: 12px;
     justify-content: center;
-    line-height: 1.4;
+    line-height: 1.8;
+    margin-bottom: 2px;
 }
 
 .partida-card .towers svg {
-    fill: #c89a3c;
+    fill: #ccc;
     height: 14px;
     vertical-align: middle;
     margin: 0 2px;
