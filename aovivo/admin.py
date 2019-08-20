@@ -7,8 +7,9 @@ class LanceInlineAdmin(SortableInlineAdminMixin, admin.StackedInline):
     extra = 1
 
 class LanceAdmin(admin.ModelAdmin):
-    list_display = ('partida', 'titulo', 'status')
-    ordering = ['-partida', '-status']
+    list_display = ('partida', 'titulo', 'status', 'order')
+    ordering = ('-partida', '-order')
+    search_fields = ('partida__titulo',)
 
 class PartidaAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'slugs')
