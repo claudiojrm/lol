@@ -21,11 +21,13 @@ jogo:
 - escalação
 - links da transmissão oficial
 - video da transmissão?
+- credito imagem
 - socket 
 
 duvidas:
 - pick/bans (interativo)
 - barão/ancião (timer)
+- inibs (timer)
 - tempo do jogo
 - aumentar gold com timer
 - stats de gold parcial por jogador
