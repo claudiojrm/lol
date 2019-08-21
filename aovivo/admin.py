@@ -4,9 +4,9 @@ from aovivo.models import Partida, Lance
 class LanceInlineAdmin(admin.StackedInline):
     model = Lance
     extra = 1
-    classes = ('grp-collapse grp-open',)
-    inline_classes = ('grp-collapse grp-open',)
     sortable_field_name = 'order'
+
+    
 
 class LanceAdmin(admin.ModelAdmin):
     list_display = ('partida', 'titulo', 'status', 'order')
@@ -29,6 +29,6 @@ class PartidaAdmin(admin.ModelAdmin):
 
     def slugs(self, obj):
         return '/'.join(('', obj.campeonato.regiao.slug,obj.campeonato.slug, obj.slug, ''))
-
+    
 admin.site.register(Partida, PartidaAdmin)
 admin.site.register(Lance, LanceAdmin)

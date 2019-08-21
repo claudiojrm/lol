@@ -10,7 +10,6 @@ ok:
 - lance a lance
 - stats de drag
 - stats de gold
-- barão/drag
 - cadastro de imagens
 - torres
 
