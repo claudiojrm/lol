@@ -9,7 +9,7 @@
             <div class="times blue">
                 <div class="label">
                     <span class="gold">
-                        <svg class="{{stat.slug}}" title="{{stat.nome}}"><use xlink:href="#svg-gold"></use></svg> 
+                        <svg class="{{stat.slug}}"><use xlink:href="#svg-gold"></use></svg> 
                         <span>{{partida.blueside.fgold}} g</span>
                     </span>
                 </div>
@@ -20,9 +20,9 @@
                 <div class="label">
                     {% for stat in partida.stats.blue %}
                         {% if 'dragao' in stat.slug %}
-                            <svg class="{{stat.slug}}" title="{{stat.nome}}"><use xlink:href="#svg-dragon"></use></svg> 
+                            <svg class="{{stat.slug}}"><use xlink:href="#svg-dragon"></use></svg> 
                         {% else %}
-                            <span class="{{stat.slug}}" title="{{stat.nome}}"></span>
+                            <span class="{{stat.slug}}"></span>
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -43,7 +43,7 @@
             <div class="times red">
                 <div class="label">
                     <span class="gold">
-                        <svg class="{{stat.slug}}" title="{{stat.nome}}"><use xlink:href="#svg-gold"></use></svg> 
+                        <svg class="{{stat.slug}}"><use xlink:href="#svg-gold"></use></svg> 
                         <span>{{partida.redside.fgold}} g</span>
                     </span>
                 </div>
@@ -54,9 +54,9 @@
                 <div class="label stats">
                     {% for stat in partida.stats.red %}
                         {% if 'dragao' in stat.slug %}
-                            <svg class="{{stat.slug}}" title="{{stat.nome}}"><use xlink:href="#svg-dragon"></use></svg> 
+                            <svg class="{{stat.slug}}"><use xlink:href="#svg-dragon"></use></svg> 
                         {% else %}
-                            <span class="{{stat.slug}}" title="{{stat.nome}}"></span>
+                            <span class="{{stat.slug}}"></span>
                         {% endif %}
                     {% endfor %}
                 </div>

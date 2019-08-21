@@ -1,10 +1,12 @@
 from django.contrib import admin
 from aovivo.models import Partida, Lance
-from adminsortable2.admin import SortableInlineAdminMixin
 
-class LanceInlineAdmin(SortableInlineAdminMixin, admin.StackedInline):
+class LanceInlineAdmin(admin.StackedInline):
     model = Lance
     extra = 1
+    classes = ('grp-collapse grp-open',)
+    inline_classes = ('grp-collapse grp-open',)
+    sortable_field_name = 'order'
 
 class LanceAdmin(admin.ModelAdmin):
     list_display = ('partida', 'titulo', 'status', 'order')

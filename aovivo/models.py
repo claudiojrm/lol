@@ -34,7 +34,7 @@ class Lance(models.Model):
 
     partida = models.ForeignKey(Partida, on_delete=models.CASCADE)
     status = models.ForeignKey(Status, on_delete=models.CASCADE)
-    order = models.IntegerField()
+    order = models.PositiveSmallIntegerField('Position', null=True)
     side = models.CharField(max_length=10, choices=cside, blank=True)
     tempo = models.IntegerField(blank=True, default=0)
     titulo = models.CharField(max_length=200, blank=True)

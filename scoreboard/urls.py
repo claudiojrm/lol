@@ -38,6 +38,7 @@ router.register(r'times', TimesViewSet)
 router.register(r'partida', PartidaViewSet)
 
 urlpatterns = [
+    path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('', include('aovivo.urls')),
     path('ao-vivo/', include('aovivo.urls')),

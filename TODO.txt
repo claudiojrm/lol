@@ -25,6 +25,10 @@ jogo:
 - socket 
 
 duvidas:
+- pick/bans (interativo)
+- barão/ancião (timer)
+- tempo do jogo
+- aumentar gold com timer
 - stats de gold parcial por jogador
 - stats de dano
 - runas
@@ -36,5 +40,3 @@ duvidas:
 - jogadas com áudio (double kill, triple kill, quadra kill, peeeenta kill)
 - deixar colaboradores cadastrarem jogos?
 - cartola?
-- pick/bans (interativo)
-- barão/ancião (timer)

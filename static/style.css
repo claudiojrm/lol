@@ -99,7 +99,6 @@ body {
 
 .partida .label .bullet:before,
 .partida .label svg {
-    cursor: pointer;
     display: inline-block;
     margin-right: 3px;
 }
